@@ -1,0 +1,11 @@
+C:\Users\49393984808\Documents\Exercícios\Tabuadas\obj\Debug\netcoreapp2.2\Tabuadas.csprojAssemblyReference.cache
+C:\Users\49393984808\Documents\Exercícios\Tabuadas\obj\Debug\netcoreapp2.2\Tabuadas.csproj.CoreCompileInputs.cache
+C:\Users\49393984808\Documents\Exercícios\Tabuadas\obj\Debug\netcoreapp2.2\Tabuadas.AssemblyInfoInputs.cache
+C:\Users\49393984808\Documents\Exercícios\Tabuadas\obj\Debug\netcoreapp2.2\Tabuadas.AssemblyInfo.cs
+C:\Users\49393984808\Documents\Exercícios\Tabuadas\bin\Debug\netcoreapp2.2\Tabuadas.deps.json
+C:\Users\49393984808\Documents\Exercícios\Tabuadas\bin\Debug\netcoreapp2.2\Tabuadas.runtimeconfig.json
+C:\Users\49393984808\Documents\Exercícios\Tabuadas\bin\Debug\netcoreapp2.2\Tabuadas.runtimeconfig.dev.json
+C:\Users\49393984808\Documents\Exercícios\Tabuadas\bin\Debug\netcoreapp2.2\Tabuadas.dll
+C:\Users\49393984808\Documents\Exercícios\Tabuadas\bin\Debug\netcoreapp2.2\Tabuadas.pdb
+C:\Users\49393984808\Documents\Exercícios\Tabuadas\obj\Debug\netcoreapp2.2\Tabuadas.dll
+C:\Users\49393984808\Documents\Exercícios\Tabuadas\obj\Debug\netcoreapp2.2\Tabuadas.pdb
