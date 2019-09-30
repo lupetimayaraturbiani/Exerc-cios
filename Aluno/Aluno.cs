@@ -30,8 +30,8 @@ namespace Aluno
             int i = bi - 1;
             if((i < 0) || (i > 3)){
                 //condição de erro;
-                throw new ArgumentOutOfRangeException($"{nameof(value)} must be between 1 and 4");
-            } else if (Notas < 0 || Notas > 10){
+                
+            
 
             }
         }
