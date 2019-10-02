@@ -1,0 +1,11 @@
+C:\Users\49393984808\Documents\Exercícios\MateODragão\bin\Debug\netcoreapp2.2\MateODragão.deps.json
+C:\Users\49393984808\Documents\Exercícios\MateODragão\bin\Debug\netcoreapp2.2\MateODragão.runtimeconfig.json
+C:\Users\49393984808\Documents\Exercícios\MateODragão\bin\Debug\netcoreapp2.2\MateODragão.runtimeconfig.dev.json
+C:\Users\49393984808\Documents\Exercícios\MateODragão\bin\Debug\netcoreapp2.2\MateODragão.dll
+C:\Users\49393984808\Documents\Exercícios\MateODragão\bin\Debug\netcoreapp2.2\MateODragão.pdb
+C:\Users\49393984808\Documents\Exercícios\MateODragão\obj\Debug\netcoreapp2.2\MateODragão.csprojAssemblyReference.cache
+C:\Users\49393984808\Documents\Exercícios\MateODragão\obj\Debug\netcoreapp2.2\MateODragão.csproj.CoreCompileInputs.cache
+C:\Users\49393984808\Documents\Exercícios\MateODragão\obj\Debug\netcoreapp2.2\MateODragão.AssemblyInfoInputs.cache
+C:\Users\49393984808\Documents\Exercícios\MateODragão\obj\Debug\netcoreapp2.2\MateODragão.AssemblyInfo.cs
+C:\Users\49393984808\Documents\Exercícios\MateODragão\obj\Debug\netcoreapp2.2\MateODragão.dll
+C:\Users\49393984808\Documents\Exercícios\MateODragão\obj\Debug\netcoreapp2.2\MateODragão.pdb

@@ -1,4 +1,5 @@
 ﻿using System;
+using MateODragão.Models;
 
 namespace MateODragão
 {
@@ -76,7 +77,7 @@ namespace MateODragão
                             System.Console.WriteLine("1 - Atacar");
                             System.Console.WriteLine("2 - Fugir");
 
-                            bool opcaobatalhajogador = Console.ReadLine();
+                            string opcaobatalhajogador = Console.ReadLine();
 
                             switch (opcaobatalhajogador)
                             {
@@ -141,16 +142,16 @@ namespace MateODragão
                                     System.Console.WriteLine("1 - Atacar");
                                     System.Console.WriteLine("2 - Fugir");
 
-                                    bool opcaobatalhajogador = Console.ReadLine();
+                                    string opcaobatalhajogador = Console.ReadLine();
 
                                     switch (opcaobatalhajogador)
                                     {
                                         case "1":
-                                            Random geradornumeroaleatorio = new Random();
-                                            int numeroaleatoriojogador = geradornumeroaleatorio.Next(0,5);
-                                            int numeroaleatoriodragao = geradornumeroaleatorio.Next(0,5);
-                                            int guerreirodestrezatotal = guerreiro.Destreza + numeroaleatoriojogador;
-                                            int dragaodestrezatotal = dragao.Destreza + numeroaleatoriodragao;
+                                             geradornumeroaleatorio = new Random();
+                                             numeroaleatoriojogador = geradornumeroaleatorio.Next(0,5);
+                                             numeroaleatoriodragao = geradornumeroaleatorio.Next(0,5);
+                                             guerreirodestrezatotal = guerreiro.Destreza + numeroaleatoriojogador;
+                                             dragaodestrezatotal = dragao.Destreza + numeroaleatoriodragao;
 
                                             if(guerreirodestrezatotal > dragaodestrezatotal){
                                                 System.Console.WriteLine($"{guerreiro.Nome.ToUpper()}: Toma essa, lagartixa gigante!!");
