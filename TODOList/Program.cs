@@ -95,7 +95,7 @@ namespace TODOList
             todoList.Add(item);
         }
 
-        public static void RemoveItem(Lista<TodoItem> todoList)
+        public static void RemoveItem(List<TodoItem> todoList)
         {
             int index = 0;
             do {
