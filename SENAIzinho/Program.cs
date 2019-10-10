@@ -6,25 +6,41 @@ namespace SENAIzinho
     {
         static void Main(string[] args)
         {
-            int limiteAlunos = 100;
-            int limiteSalas = 10;
-            Aluno[] alunos = new string [100];
-            Sala[] salas = new string [10];
-            int alunosCadastrados;
-            int salasCadastradas;
-            bool querSair;
-
+        int limiteAlunos = 10;
+        int limiteSalas = 10;
+        int totalAlunos = 100;
+        Aluno[] alunos =  new Aluno[100];
+        Sala[] salas = new Sala [10];
+        int alunosCadastrados;
+        int salasCadastradas;
+        bool querSair;
         }
 
-        public void AlunoCadastrarAluno(int limiteAlunos, int alunosCadastrados){
-            if(alunosCadastrados < limiteAlunos){
-                System.Console.Write("Digite o nome do aluno: ");
+        public void CadastrarAluno(Aluno[] alunos,int totalAlunos, int alunosCadastrados) {
+            if(alunosCadastrados < totalAlunos)
+                {
+                System.Console.WriteLine("Cadastro de Alunos");
+                System.Console.WriteLine();
+                System.Console.WriteLine("Nome:");
                 string nome = Console.ReadLine();
-                System.Console.Write("Digite a idade do aluno: ");
-                DateTime DataNascimento = DateTime.Parse(Console.ReadLine());
+                System.Console.WriteLine("Data de nascimento:");
+                DateTime dtNascimento = DateTime.Parse(Console.ReadLine());
+
+                Aluno novoAluno = new Aluno();
+                novoAluno.Nome = nome;
+                novoAluno.DataNascimento = dtNascimento;
                 
-            }else {
-                System.Console.WriteLine("Não há vagas suficientes para o cadastro do aluno.");
+                int index = 0;
+                foreach(Aluno aluno in alunos)
+                {
+                if (aluno == null)
+                {
+                    alunos[index] = novoAluno;
+                    break;
+                }
+                index++;
+                }
+                alunosCadastrados++;
             }
         }
     }
