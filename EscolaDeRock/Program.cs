@@ -33,7 +33,7 @@ namespace EscolaDeRock
     {
         static void Main(string[] args)
         {
-            bool querSair;
+            bool querSair = false;
             string[] itensMenuPrincipal = Enum.GetNames(typeof(FormacaoEnum));
             string[] itensMenuCtegoria = Enum.GetNames(typeof(CategoriaEnum));
 
@@ -92,6 +92,25 @@ namespace EscolaDeRock
                     }
                     #endregion
                 } while (formacaoEscolhida);
+            bool bandaCompleta = false;
+            int vagas = 0;
+
+            #region Adiciona os intrumentos a formação escolhida
+            #endregion
+            switch (opcoesFormacaoSelecionada)
+            {
+                #region Cadastro de Instrumentos para trios
+                #endregion
+                case 0:
+                    vagas = 2;
+                    do
+                    {
+                        
+
+                        Console.Write($"Digite o código do instrumento de harmonia");
+                    } while (true);
+                
+            }
             } while (!querSair);
         }
     }

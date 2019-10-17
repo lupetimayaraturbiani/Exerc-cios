@@ -9,7 +9,7 @@ namespace EscolaDeRock.Models
         public string TocarMusica()
         {
             int nota = new Random().Next(notas.Length - 1);
-            return notas[notas];
+            return notas[nota];
         }
     }
 }
