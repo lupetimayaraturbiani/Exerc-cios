@@ -113,5 +113,7 @@ namespace EscolaDeRock
             }
             } while (!querSair);
         }
+
+        
     }
 }
