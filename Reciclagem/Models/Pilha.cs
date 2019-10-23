@@ -1,12 +1,13 @@
+using System;
+using Reciclagem.Interfaces;
+
 namespace Reciclagem.Models
 {
-    public class Pilha
+    public class Pilha: Lixo, IDescarteEspecial
     {
-        public bool ReciclarEspecial()
+        public string ReciclarEspecial()
         {
-            System.Console.WriteLine("Lixeira: Descarte Especial");
-            System.Console.WriteLine("  Cor:   Cinza");
-            return true;
+            return this.GetType().Name;
         }
     }
 }

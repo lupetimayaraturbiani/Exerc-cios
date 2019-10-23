@@ -3,13 +3,11 @@ using Reciclagem.Interfaces;
 
 namespace Reciclagem.Models
 {
-    public class Desodorante : IDescarteEspecial
+    public class Desodorante : Lixo, IDescarteEspecial
     {
-        public bool ReciclarEspecial()
+        public string ReciclarEspecial()
         {
-            System.Console.WriteLine("Lixeira: Descarte Especial");
-            System.Console.WriteLine("Cor:     Cinza");
-            return true;
+            return this.GetType().Name;
         }
     }
 }

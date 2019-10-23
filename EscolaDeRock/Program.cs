@@ -11,7 +11,7 @@ namespace EscolaDeRock
         QUARTETO
     };
 
-    enum InstumentosEnum : int
+    enum InstrumentosEnum : int
     {
         BAIXO,
         BATERIA,
@@ -105,15 +105,108 @@ namespace EscolaDeRock
                     vagas = 2;
                     do
                     {
-                        
+                        ExibirMenuDeInstrumentos();
 
-                        Console.Write($"Digite o código do instrumento de harmonia");
-                    } while (true);
+                        Console.Write($"Digite o código do instrumento de harmonia:");
+                        int codigo = int.Parse(Console.ReadLine());
+                        var instrumento = Deposito.Instrumentos[codigo];
+                        Type interfaceEncontrada = instrumento.GetType().GetInterface("IPercurssao");
+
+                        if (interfaceEncontrada != null)
+                        {
+                            vagas--;
+                            ColocarNaBanda((IPercurssao)instrumento);
+                        }
+                        else
+                        {
+                            System.Console.WriteLine("O instrumento selecionado não é de percurssão");
+                            continue;
+                        }
+
+                        if (vagas == 0)
+                        {
+                            bandaCompleta = true;
+                        }
+                    } while (!bandaCompleta);
+                    System.Console.WriteLine("Sua banda está completa!");
+                    Console.ReadLine();
+                    break;
                 
             }
             } while (!querSair);
         }
+        #region Adiciona instrumentos na banda.
+        public static bool ColocarNaBanda(IHarmonia harmonia)
+        {
+            harmonia.TocarAcordes();
+            System.Console.WriteLine(harmonia.GetType().BaseType + " foi incluído");
+            return true;
+        }
 
+        public static bool ColocarNaBanda(IPercurssao percussao)
+        {
+            percussao.ManterORitmo();
+            System.Console.WriteLine(percussao.GetType().BaseType + " foi incluído");
+            return true;
+        }
+
+        public static bool ColocarNaBanda(IMelodia melodia)
+        {
+            melodia.TocarSolo();
+            System.Console.WriteLine(melodia.GetType().BaseType + " foi incluído");
+            return true;
+        }
+        #endregion
+
+        public static void DestacarOpcao(string opcao)
+        {
+            Console.BackgroundColor = ConsoleColor.DarkRed;
+            System.Console.WriteLine(opcao);
+            Console.ResetColor();
+        }
+
+        public static void ExibirMenuDeInstrumentos()
+        {
+            var instrumentos = Enum.GetNames(typeof(InstrumentosEnum));
+            int codigo = 1;
+            string menuInstrumentoBorda = "##############################";
+
+            System.Console.WriteLine(menuInstrumentoBorda);
+            System.Console.WriteLine("#                            #");
+            System.Console.WriteLine("#        Instrumentos        #");
+            System.Console.WriteLine("#                            #");
+            System.Console.WriteLine(menuInstrumentoBorda);
+
+            foreach (var instrumento in instrumentos)
+            {
+                System.Console.WriteLine($"  {codigo++}.{TratarTituloMenu(instrumento)}");
+            }
+
+            System.Console.WriteLine(menuInstrumentoBorda);
+        }
+
+        public static void ExibirMenuDeCategorias()
+        {
+            var categorias = Enum.GetNames(typeof(CategoriaEnum));
+            int codigo = 1;
+            string menuInstrumentoBorda = "##############################";
+            System.Console.WriteLine(menuInstrumentoBorda);
+            System.Console.WriteLine("#          Categorias        #");
+
+            foreach (var categoria in categorias)
+            {
+
+                System.Console.WriteLine($"  {codigo++}.{TratarTituloMenu(categoria)}");
+            }
+
+            System.Console.WriteLine(menuInstrumentoBorda);
+
+        }
+
+        public static string TratarTituloMenu(string titulo)
+        {
+            return System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(titulo.Replace("_", " ").ToLower());
+        }
         
     }
 }

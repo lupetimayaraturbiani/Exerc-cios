@@ -3,13 +3,11 @@ using Reciclagem.Interfaces;
 
 namespace Reciclagem.Models
 {
-    public class Latinha : IMetal
+    public class Latinha : Lixo, IMetal
     {
-        public bool ReciclarMetal()
+        public string ReciclarMetal()
         {
-            System.Console.WriteLine("Lixeira: Metal");
-            System.Console.WriteLine("  Cor:   Amarela");
-            return true;
+            return this.GetType().Name;
         }
     }
 }

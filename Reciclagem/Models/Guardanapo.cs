@@ -1,12 +1,13 @@
+using System;
+using Reciclagem.Interfaces;
+
 namespace Reciclagem.Models
 {
-    public class Guardanapo
+    public class Guardanapo: Lixo, IPapel
     {
-        public bool ReciclarPapel()
+        public string ReciclarPapel()
         {
-            System.Console.WriteLine("Lixeira: Papel");
-            System.Console.WriteLine("  Cor:   Azul");
-            return true;
+            return this.GetType().Name;
         }
     }
 }

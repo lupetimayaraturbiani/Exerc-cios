@@ -3,12 +3,11 @@ using Reciclagem.Interfaces;
 
 namespace Reciclagem.Models
 {
-    public class SacoCafe
+    public class SacoCafe: Lixo, IOrganico
     {
-        public bool ReciclarOrganico()
+        public string MandarCompostagem()
         {
-            System.Console.WriteLine("Lixeira: Orgânico");
-            return true;
+            return this.GetType().Name;
         }
     }
 }
