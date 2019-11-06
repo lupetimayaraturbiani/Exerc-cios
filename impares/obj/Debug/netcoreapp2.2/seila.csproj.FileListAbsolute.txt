@@ -9,3 +9,14 @@ C:\Users\49393984808\Documents\Exercícios\seila\obj\Debug\netcoreapp2.2\seila.A
 C:\Users\49393984808\Documents\Exercícios\seila\obj\Debug\netcoreapp2.2\seila.AssemblyInfo.cs
 C:\Users\49393984808\Documents\Exercícios\seila\obj\Debug\netcoreapp2.2\seila.dll
 C:\Users\49393984808\Documents\Exercícios\seila\obj\Debug\netcoreapp2.2\seila.pdb
+C:\Users\49393984808\Documents\Exercícios\impares\bin\Debug\netcoreapp2.2\seila.deps.json
+C:\Users\49393984808\Documents\Exercícios\impares\bin\Debug\netcoreapp2.2\seila.runtimeconfig.json
+C:\Users\49393984808\Documents\Exercícios\impares\bin\Debug\netcoreapp2.2\seila.runtimeconfig.dev.json
+C:\Users\49393984808\Documents\Exercícios\impares\bin\Debug\netcoreapp2.2\seila.dll
+C:\Users\49393984808\Documents\Exercícios\impares\bin\Debug\netcoreapp2.2\seila.pdb
+C:\Users\49393984808\Documents\Exercícios\impares\obj\Debug\netcoreapp2.2\seila.csprojAssemblyReference.cache
+C:\Users\49393984808\Documents\Exercícios\impares\obj\Debug\netcoreapp2.2\seila.csproj.CoreCompileInputs.cache
+C:\Users\49393984808\Documents\Exercícios\impares\obj\Debug\netcoreapp2.2\seila.AssemblyInfoInputs.cache
+C:\Users\49393984808\Documents\Exercícios\impares\obj\Debug\netcoreapp2.2\seila.AssemblyInfo.cs
+C:\Users\49393984808\Documents\Exercícios\impares\obj\Debug\netcoreapp2.2\seila.dll
+C:\Users\49393984808\Documents\Exercícios\impares\obj\Debug\netcoreapp2.2\seila.pdb

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\49393984808\\Documents\\Exercícios\\seila\\seila.csproj": {}
+    "C:\\Users\\49393984808\\Documents\\Exercícios\\impares\\seila.csproj": {}
   },
   "projects": {
-    "C:\\Users\\49393984808\\Documents\\Exercícios\\seila\\seila.csproj": {
+    "C:\\Users\\49393984808\\Documents\\Exercícios\\impares\\seila.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\49393984808\\Documents\\Exercícios\\seila\\seila.csproj",
+        "projectUniqueName": "C:\\Users\\49393984808\\Documents\\Exercícios\\impares\\seila.csproj",
         "projectName": "seila",
-        "projectPath": "C:\\Users\\49393984808\\Documents\\Exercícios\\seila\\seila.csproj",
+        "projectPath": "C:\\Users\\49393984808\\Documents\\Exercícios\\impares\\seila.csproj",
         "packagesPath": "C:\\Users\\49393984808\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\49393984808\\Documents\\Exercícios\\seila\\obj\\",
+        "outputPath": "C:\\Users\\49393984808\\Documents\\Exercícios\\impares\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

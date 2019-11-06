@@ -1,0 +1,78 @@
+* {
+    margin:0;
+    padding:0;
+}
+
+body {
+    font-family: 'ZCOOL XiaoWei', serif;
+    font-size: 1.5em;
+    text-align: center;
+    background-color: #e6e8ed;
+    color: #333634;
+}
+
+h2, h3, h4, h5, h6 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    font-size: 1.2em;
+    color: #333634;
+}
+
+h1 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    font-size: 2em;
+    background-color: #1848a8;
+    color: white;
+}
+/******************************************** NAV ***********************************************/
+
+nav {
+    background-color: #1848a8;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    font-size: 1em;
+    height: 2em;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav ul > li > a {
+    display: block;
+    padding: 0.7em;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+/******************************************** NAV - Final  ***********************************************/
+
+#Lazer > img{
+    width: 20%;
+}
+
+section {
+    text-align: center;
+}
+section h2 {
+    padding: 20px 0;
+}
+section > a {
+    text-decoration: none;
+}
+
+a {
+    display: block;
+    padding: 0.7em;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+
+#rodapé{
+    background-color: #1848a8;
+    color: white;
+    text-align: center;
+}
