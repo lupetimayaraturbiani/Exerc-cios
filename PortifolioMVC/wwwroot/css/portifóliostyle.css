@@ -2,6 +2,12 @@
     margin:0;
     padding:0;
 }
+#titulo {
+    font-family: 'ZCOOL XiaoWei', serif;
+    font-size: 2em;
+    background-color: #1848a8;
+    color: white;
+}
 
 body {
     font-family: 'ZCOOL XiaoWei', serif;
@@ -9,6 +15,7 @@ body {
     text-align: center;
     background-color: #e6e8ed;
     color: #333634;
+    width: 100%;
 }
 
 h2, h3, h4, h5, h6 {
@@ -17,12 +24,6 @@ h2, h3, h4, h5, h6 {
     color: #333634;
 }
 
-h1 {
-    font-family: 'ZCOOL XiaoWei', serif;
-    font-size: 2em;
-    background-color: #1848a8;
-    color: white;
-}
 /******************************************** NAV ***********************************************/
 
 nav {
@@ -46,11 +47,18 @@ nav ul > li > a {
     font-weight: bold;
 }
 
+nav ul > li > a:hover {
+    background-color: #e6e8ed;
+    color: #333634;
+}
+
 /******************************************** NAV - Final  ***********************************************/
 
 #Lazer > img{
     width: 20%;
 }
+
+
 
 section {
     text-align: center;
