@@ -18,10 +18,10 @@
         </section>
         <nav>
             <ul>
-                <li><a href="roletop-principal.html">Inicial</a></li>
-                <li><a href="fotos.html">Fotos</a></li>
-                <li><a href="login.html">Login</a></li>
-                <li><a href="mais.html">Mais</a></li>
+                <li class="bt-commom-menu"><a onclick="toggleMobileMenu()" asp-controller="Home" asp-action="Index" class="active" >Inicial</a></li>
+                <li class="bt-commom-menu"><a onclick="toggleMobileMenu()" asp-controller="Galeria" asp-action="fotos" >Fotos</a></li>
+                <li class="bt-commom-menu"><a onclick="toggleMobileMenu()" href="login.html">Login</a></li>
+                <li class="bt-commom-menu"><a onclick="toggleMobileMenu()" href="mais.html">Mais</a></li>
             </ul>
         </nav>
     </header>
@@ -38,6 +38,36 @@
         </footer>
         <a href="#">Inicio da página</a>
     </section>
+
+    <script>
+        function toggleMobileMenu() {
+        var ul = document.querySelector("nav ul");
+        var commonButtons = document.querySelectorAll("nav .bt-common-menu");
+        var icon = document.querySelector(".icon > i");
+
+        ul.classList.toggle("mobile-mode");
+
+        if (icon.classList.contains("fa-bars")) {
+                icon.classList.remove("fa-bars");
+                icon.classList.remove("fa");
+
+                icon.classList.add("fas");
+                icon.classList.add("fa-skull");
+        } else {
+                icon.classList.remove("fas");
+                icon.classList.remove("fa-skull");
+
+                icon.classList.add("fa");
+                icon.classList.add("fa-bars");
+        }
+
+        for (var button of commonButtons) {
+                button.classList.toggle("active");
+        }
+
+        }
+        
+</script>
 
 </body>
 

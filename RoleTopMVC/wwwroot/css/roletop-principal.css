@@ -114,3 +114,20 @@ a {
     color: white;
     font-weight: bold;
 }
+
+nav #bt-mobile-menu {
+    display: block;
+}
+
+nav .bt-common-menu {
+    display: none;
+}
+
+nav .bt-common-menu.active {
+    display: block;
+}
+
+nav ul.mobile-mode {
+    display: flex;
+    flex-direction: column;
+}

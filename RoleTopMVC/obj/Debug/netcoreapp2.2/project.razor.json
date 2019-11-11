@@ -2996,6 +2996,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "Views\\Galeria\\fotos.cshtml",
+      "TargetPath": "Views\\Galeria\\fotos.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
       "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
       "FileKind": "mvc"
