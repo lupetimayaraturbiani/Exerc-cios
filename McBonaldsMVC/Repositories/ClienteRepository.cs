@@ -17,7 +17,6 @@ namespace McBonaldsMVC.Repositories
 
         public bool Inserir(Cliente cliente)
         {
-            
             var linha = new string[] {PrepararRegistroCSV(cliente)};
 
             File.AppendAllLines(PATH, linha);
@@ -29,5 +28,8 @@ namespace McBonaldsMVC.Repositories
         {
             return $"Nome={cliente.Nome};email={cliente.Email};senha={cliente.Senha};endereco={cliente.Endereco};telefone={cliente.Telefone};data_nascimento={cliente.DataNascimento}";
         }
+
+        
+    
     }
 }
