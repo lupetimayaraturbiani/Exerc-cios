@@ -18,6 +18,7 @@
     {
         <link href="~/css/fotos.css" rel="stylesheet" type="text/css"/>
         <link href="~/css/login.css" rel="stylesheet" type="text/css"/>
+        <link href="~/css/mais.css" rel="stylesheet" type="text/css" />
     }
 
 </head>
@@ -25,7 +26,7 @@
 <body>
     <header>
         <section id="logo-area">
-            <img class="logo" src="img/logo.png" />
+            <img class="logo" src="/img/logo.png" />
         </section>
         <nav>
             <ul>
@@ -33,7 +34,7 @@
                 <li class="bt-commom-menu"><a onclick="toggleMobileMenu()" asp-controller="Home" asp-action="Index" class="active" >Inicial</a></li>
                 <li class="bt-commom-menu"><a onclick="toggleMobileMenu()" asp-controller="Galeria" asp-action="Fotos" >Fotos</a></li>
                 <li class="bt-commom-menu"><a onclick="toggleMobileMenu()" asp-controller="Cliente" asp-action="Login">Login</a></li>
-                <li class="bt-commom-menu"><a onclick="toggleMobileMenu()" href="mais.html">Mais</a></li>
+                <li class="bt-commom-menu"><a onclick="toggleMobileMenu()" asp-controller="Mais" asp-action="Mais">Mais</a></li>
             </ul>
         </nav>
         

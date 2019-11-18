@@ -8,9 +8,26 @@ namespace McBonaldsMVC.Repositories
     {
         private const string PATH = "Database/Shake.csv";
 
+
+        public double ObterPrecoDe(string nomeShake)
+        {
+            var lista = ObterTodos();
+            var preco = 0.0;
+            foreach (var item in lista)
+            {
+                if (item.Nome.Equals(nomeShake))
+                {
+                    preco = item.Preco;
+                    break;
+                }
+            }
+
+            return preco;
+        }
+
         public List<Shake> ObterTodos()
         {
-            List<ShakeRepository> shakes = new List<ShakeRepository>();
+            List<Shake> shakes = new List<Shake>();
             string[] linhas = File.ReadAllLines(PATH);
             foreach (var linha in linhas)
             {
@@ -21,6 +38,7 @@ namespace McBonaldsMVC.Repositories
                 shakes.Add(s);
             }
 
+            return shakes;
             
         }
     }

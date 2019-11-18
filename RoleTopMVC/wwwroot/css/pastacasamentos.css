@@ -27,24 +27,36 @@ h2 {
 /* ************************************************************************************** */
 nav {
     background-color: #FFB900;
+    width: 100%;
+    z-index: 999;
 }
 
 nav ul {
     display: flex;
-    list-style-type: none;
-    font-size: 1em;
-    height: 2em;
-    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
     justify-content: space-between;
-    
+    align-items: center;
+    font-size: 1em;
+    list-style-type: none;
+}
+
+nav ul > li {
+    width: 100%;
+    text-align: center;
 }
 
 nav ul > li > a {
     display: block;
-    padding: 0.7em;
+    padding: 0.4em;
     text-decoration: none;
     color: white;
     font-weight: bold;
+}
+
+nav ul > li > a:hover {
+    background-color: #A10A89;
+    color: white;
 }
 /* ************************************************************************************** */
                                         /* LOGO */
