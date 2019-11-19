@@ -89,7 +89,7 @@ nav ul > li > a:hover {
 .flex-group-sobre-o-espaço {
     display: flex;
     justify-content: right;
-    width: 100%;
+    width: 30%;
 }
 
 .flex-group-sobre-o-espaço.grupo-cima {
@@ -114,20 +114,23 @@ a {
     color: white;
     font-weight: bold;
 }
+@media (max-width: 1000px) {
+    
+    nav #bt-mobile-menu {
+        display: block;
+    }
 
-nav #bt-mobile-menu {
-    display: block;
+    nav .bt-common-menu {
+        display: none;
+    }
+
+    nav .bt-common-menu.active {
+        display: block;
+    }
+
+    nav ul.mobile-mode {
+        display: flex;
+        flex-direction: column;
+    }
 }
 
-nav .bt-common-menu {
-    display: none;
-}
-
-nav .bt-common-menu.active {
-    display: block;
-}
-
-nav ul.mobile-mode {
-    display: flex;
-    flex-direction: column;
-}
