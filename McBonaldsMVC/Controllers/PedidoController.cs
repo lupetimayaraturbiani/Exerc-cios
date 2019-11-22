@@ -7,8 +7,10 @@ using McBonaldsMVC.ViewModels;
 
 namespace McBonaldsMVC.Controllers
 {
-    public class PedidoController : Controller
+    public class PedidoController : AbstractController
     {
+        
+        ClienteRepository clienteRepository = new ClienteRepository();
         PedidoRepository pedidoRepository = new PedidoRepository();
 
         HamburguerRepository hamburguerRepository = new HamburguerRepository();
@@ -21,6 +23,17 @@ namespace McBonaldsMVC.Controllers
             pvm.Hamburgueres = hamburguerRepository.ObterTodos();
             pvm.Shakes = shakeRepository.ObterTodos();
 
+            var emailCliente = ObterUsuarioSession();
+            if (!string.IsNullOrEmpty(emailCliente))
+            {
+                pvm.Cliente = clienteRepository.ObterPor(emailCliente);
+            }
+            
+            var nomeUsuario = ObterUsuarioNomeSession();
+            if (!string.IsNullOrEmpty(nomeUsuario))
+            {
+                pvm.NomeCliente = nomeUsuario;
+            }
             return View(pvm);
         }
 
@@ -64,7 +77,8 @@ namespace McBonaldsMVC.Controllers
             if (pedidoRepository.Inserir(pedido))
             {
                 return View("Sucesso");
-            } else 
+            } 
+            else 
             {
                 return View("Erro");
             }

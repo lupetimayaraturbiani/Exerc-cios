@@ -11,13 +11,13 @@ namespace McBonaldsMVC.Models
         public string Email {get;set;}
         public DateTime DataNascimento {get;set;}
 
-
         public Cliente()
         {
 
         }
 
-        public Cliente(string nome, string endereco, string telefone, string senha, string email, DateTime dataNascimento)
+        public Cliente(string nome, string endereco, string telefone, string senha, string email,
+        DateTime dataNascimento)
         {
             this.Nome = nome;
             this.Endereco = endereco;
@@ -25,6 +25,9 @@ namespace McBonaldsMVC.Models
             this.Senha = senha;
             this.Email = email;
             this.DataNascimento = dataNascimento;
+
         }
+
+
     }
 }

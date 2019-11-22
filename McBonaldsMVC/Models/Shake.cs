@@ -1,5 +1,3 @@
-using Microsoft.Extensions.Primitives;
-
 namespace McBonaldsMVC.Models
 {
     public class Shake : Produto
