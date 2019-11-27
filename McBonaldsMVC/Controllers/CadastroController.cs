@@ -1,18 +1,24 @@
 using System;
 using McBonaldsMVC.Models;
 using McBonaldsMVC.Repositories;
+using McBonaldsMVC.ViewModels;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace McBonaldsMVC.Controllers
 {
-    public class CadastroController : Controller
+    public class CadastroController : AbstractController
     {
         
         ClienteRepository clienteRepository = new ClienteRepository();
         public IActionResult Index()
         {
-            return View();
+            return View(new BaseViewModel()
+            {
+                NomeView = "Cadastro",
+                UsuarioEmail = ObterUsuarioSession(),
+                UsuarioNome = ObterUsuarioNomeSession()
+            });
         }
 
         public IActionResult CadastrarCliente(IFormCollection form)
@@ -30,7 +36,10 @@ namespace McBonaldsMVC.Controllers
                     DateTime.Parse(form["data-nascimento"]));
                 
                 clienteRepository.Inserir(cliente);
-                return View("Sucesso");
+                return View("Sucesso", new RespostaViewModel(){
+                    UsuarioEmail = ObterUsuarioSession(),
+                    UsuarioNome = ObterUsuarioNomeSession()
+                });
             }
             catch (Exception e)
             {
