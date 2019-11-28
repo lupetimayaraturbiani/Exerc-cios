@@ -6,13 +6,17 @@ using McBonaldsMVC.Models;
 namespace McBonaldsMVC.Repositories {
     public class PedidoRepository : RepositoryBase {
         private const string PATH = "Database/Pedido.csv";
-        public PedidoRepository () {
+        public PedidoRepository () 
+        {
             if (!File.Exists (PATH)) {
                 File.Create (PATH).Close ();
             }
 
         }
-        public bool Inserir (Pedido pedido) {
+        public bool Inserir (Pedido pedido) 
+        {
+            var quantidadePedidos = File.ReadAllLines(PATH).Length;
+            pedido.Id = (ulong) ++quantidadePedidos;
             var linha = new string[] { PrepararPedidoCSV (pedido) };
             File.AppendAllLines (PATH, linha);
 
@@ -38,9 +42,11 @@ namespace McBonaldsMVC.Repositories {
             var linhas = File.ReadAllLines (PATH);
             List<Pedido> pedidos = new List<Pedido>();
 
-            foreach (var linha in linhas) {
+            foreach (var linha in linhas) 
+            {
                 Pedido pedido = new Pedido ();
-
+                pedido.Id = ulong.Parse(ExtrairValorDoCampo("id", linha));
+                pedido.Status = uint.Parse(ExtrairValorDoCampo("status_pedido", linha));
                 pedido.Cliente.Nome = ExtrairValorDoCampo("cliente_nome", linha);
                 pedido.Cliente.Endereco = ExtrairValorDoCampo("cliente_endereco",linha);
                 pedido.Cliente.Telefone = ExtrairValorDoCampo("cliente_telefone", linha);
@@ -62,7 +68,7 @@ namespace McBonaldsMVC.Repositories {
             Hamburguer h = pedido.Hamburguer;
             Shake s = pedido.Shake;
 
-            return $"cliente_nome={c.Nome};cliente_endereco={c.Endereco};cliente_telefone={c.Telefone};cliente_email={c.Email};hamburguer_nome={h.Nome};hamburguer_preco={h.Preco};shake_nome={s.Nome};shake_preco={s.Preco};data_pedido={pedido.DataDoPedido};preco_total={pedido.PrecoTotal}";
+            return $"id={pedido.Id};status_pedido={pedido.Status};cliente_nome={c.Nome};cliente_endereco={c.Endereco};cliente_telefone={c.Telefone};cliente_email={c.Email};hamburguer_nome={h.Nome};hamburguer_preco={h.Preco};shake_nome={s.Nome};shake_preco={s.Preco};data_pedido={pedido.DataDoPedido};preco_total={pedido.PrecoTotal}";
         }
     }
 }

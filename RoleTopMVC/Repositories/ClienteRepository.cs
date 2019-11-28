@@ -1,4 +1,5 @@
 using System.IO;
+using RoleTopMVC.Models;
 
 namespace RoleTopMVC.Repositories
 {
@@ -14,7 +15,7 @@ namespace RoleTopMVC.Repositories
             }
         }
 
-        public bool Inserir (ClienteRepository cliente)
+        public bool Inserir (Cliente cliente)
         {
             var linha = new string[] {PrepararRegistroCSV(cliente)};
             File.AppendAllLines(PATH, linha);
@@ -24,7 +25,7 @@ namespace RoleTopMVC.Repositories
 
         private string PrepararRegistroCSV(Cliente cliente)
         {
-            return $"nome={cliente.Nome};email={cliente.Email};senha"
+            return $"nome={cliente.Nome};email={cliente.Email};senha={cliente.Senha};endereco={cliente.Endereco};telefone={cliente.Telefone};data_nascimento={cliente.DataNascimento}";
         }
     }
 }

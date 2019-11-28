@@ -1,1 +1,1 @@
-cliente_nome=lala;cliente_endereco=lala 123;cliente_telefone=12345553;cliente_email=;hamburguer_nome=Combo da Hora;hamburguer_preco=19,99;shake_nome=Morango;shake_preco=19,99;data_pedido=27/11/2019 17:17:05;preco_total=39,98
+id=1;status_pedido=0;cliente_nome=sim silva;cliente_endereco=sim 123;cliente_telefone=11 11111111;cliente_email=sim@gmail.com;hamburguer_nome=Vegeburguer;hamburguer_preco=10,99;shake_nome=Chocolate;shake_preco=12,99;data_pedido=28/11/2019 17:25:02;preco_total=23,98
