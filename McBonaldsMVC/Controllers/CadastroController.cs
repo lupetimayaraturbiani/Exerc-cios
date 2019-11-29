@@ -1,4 +1,5 @@
 using System;
+using McBonaldsMVC.Enums;
 using McBonaldsMVC.Models;
 using McBonaldsMVC.Repositories;
 using McBonaldsMVC.ViewModels;
@@ -35,6 +36,7 @@ namespace McBonaldsMVC.Controllers
                     form["email"],
                     DateTime.Parse(form["data-nascimento"]));
                 
+                cliente.TipoUsuario = (uint) TiposUsuario.CLIENTE;
                 clienteRepository.Inserir(cliente);
                 return View("Sucesso", new RespostaViewModel(){
                     UsuarioEmail = ObterUsuarioSession(),
@@ -47,11 +49,7 @@ namespace McBonaldsMVC.Controllers
                 return View("Erro");
             }
             
-            
-            System.Console.WriteLine(form["nome"]);
-            System.Console.WriteLine(form["data-nascimento"]);
 
-            return View();
         }
     }
 }

@@ -1,16 +1,12 @@
-using System;
-using McBonaldsMVC.Enums;
-using McBonaldsMVC.ViewModels;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace McBonaldsMVC.Controllers
+namespace RoleTopMVC.Controllers
 {
-    public class AbstractController : Controller
+    public class AbstractController: Controller
     {
         protected const string SESSION_CLIENTE_EMAIL = "email_cliente";
         protected const string SESSION_CLIENTE_NOME = "nome_cliente";
-        protected const string SESSION_CLIENTE_TIPO = "cliente_tipo";
 
         protected string ObterUsuarioSession()
         {
@@ -19,12 +15,11 @@ namespace McBonaldsMVC.Controllers
             {
                 return usuario;
             }
-            else
+            else 
             {
                 return "";
             }
         }
-
 
         protected string ObterUsuarioNomeSession()
         {
@@ -38,20 +33,5 @@ namespace McBonaldsMVC.Controllers
                 return "";
             }
         }
-
-        protected string ObterUsuarioTipoSession()
-        {
-            var tipoUsuario = HttpContext.Session.GetString(SESSION_CLIENTE_TIPO);
-            if (!string.IsNullOrEmpty(tipoUsuario))
-            {
-                return tipoUsuario;
-            }
-            else
-            {
-                return "";
-            }
-        }
-
-        
     }
 }

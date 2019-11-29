@@ -3011,6 +3011,16 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\49393984808\\Documents\\Exercícios\\RoleTopMVC\\Views\\Shared\\_Erro.cshtml",
+      "TargetPath": "Views\\Shared\\_Erro.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\49393984808\\Documents\\Exercícios\\RoleTopMVC\\Views\\Shared\\_Sucesso.cshtml",
+      "TargetPath": "Views\\Shared\\_Sucesso.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\49393984808\\Documents\\Exercícios\\RoleTopMVC\\Views\\Shared\\_Layout.cshtml",
       "TargetPath": "Views\\Shared\\_Layout.cshtml",
       "FileKind": "mvc"

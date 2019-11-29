@@ -3,7 +3,7 @@ using RoleTopMVC.Models;
 
 namespace RoleTopMVC.Repositories
 {
-    public class ClienteRepository
+    public class ClienteRepository : RepositoryBase
     {
         private const string PATH = "Database/Cliente.csv";
 
@@ -22,6 +22,8 @@ namespace RoleTopMVC.Repositories
 
             return true;
         }
+
+        // fazer método Obterpor
 
         private string PrepararRegistroCSV(Cliente cliente)
         {
