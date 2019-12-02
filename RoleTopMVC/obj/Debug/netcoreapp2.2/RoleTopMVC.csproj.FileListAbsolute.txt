@@ -68,5 +68,5 @@ C:\Users\Mayara.MAYARA\Desktop\Exerc-cios-master\RoleTopMVC\obj\Debug\netcoreapp
 C:\Users\49393984808\Documents\Exercícios\RoleTopMVC\obj\Debug\netcoreapp2.2\Razor\Views\Mais\Mais.g.cshtml.cs
 C:\Users\49393984808\Documents\Exercícios\RoleTopMVC\obj\Debug\netcoreapp2.2\Razor\Views\Cadastro\IndexCadastro.g.cshtml.cs
 C:\Users\49393984808\Documents\Exercícios\RoleTopMVC\obj\Debug\netcoreapp2.2\Razor\Views\FAQ\Faq.g.cshtml.cs
-C:\Users\49393984808\Documents\Exercícios\RoleTopMVC\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_Erro.g.cshtml.cs
-C:\Users\49393984808\Documents\Exercícios\RoleTopMVC\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_Sucesso.g.cshtml.cs
+C:\Users\49393984808\Documents\Exercícios\RoleTopMVC\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Erro.g.cshtml.cs
+C:\Users\49393984808\Documents\Exercícios\RoleTopMVC\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Sucesso.g.cshtml.cs

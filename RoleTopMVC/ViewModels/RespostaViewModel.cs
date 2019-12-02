@@ -1,6 +1,6 @@
 namespace RoleTopMVC.ViewModels
 {
-    public class RespostaViewModel : BaseViewModel
+    public class RespostaViewModel 
     {
         public string Mensagem {get;set;}
 

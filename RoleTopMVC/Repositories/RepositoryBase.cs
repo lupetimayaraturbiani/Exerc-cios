@@ -2,7 +2,7 @@ namespace RoleTopMVC.Repositories
 {
     public class RepositoryBase
     {
-        protected string ExtrarValorDoCampo (string nomeCampo, string linha)
+        protected string ExtrairValorDoCampo (string nomeCampo, string linha)
         {
             var chave = nomeCampo;
             

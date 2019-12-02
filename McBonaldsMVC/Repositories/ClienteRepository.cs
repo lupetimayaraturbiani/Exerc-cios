@@ -35,8 +35,7 @@ namespace McBonaldsMVC.Repositories
                     c.TipoUsuario = uint.Parse(ExtrairValorDoCampo("tipo_usuario", item));
                     c.Nome = ExtrairValorDoCampo("nome", item);
                     c.Email = ExtrairValorDoCampo("email", item);
-                    c.DataNascimento = 
-                    DateTime.Parse(ExtrairValorDoCampo("data_nascimento", item));
+                    c.DataNascimento = DateTime.Parse(ExtrairValorDoCampo("data_nascimento", item));
                     c.Endereco = ExtrairValorDoCampo("endereco", item);
                     c.Telefone = ExtrairValorDoCampo("telefone", item);
                     c.Senha = ExtrairValorDoCampo("senha", item);

@@ -13,12 +13,7 @@ namespace RoleTopMVC.Controllers
         ClienteRepository clienteRepository = new ClienteRepository();
         public IActionResult IndexCadastro()
         {
-            return View(new BaseViewModel()
-            {
-                NomeView = "Cadastro",
-                UsuarioEmail = ObterUsuarioSession(),
-                UsuarioNome = ObterUsuarioNomeSession()
-            });
+            return View();
         }
 
         public IActionResult CadastrarCliente(IFormCollection form)
@@ -29,17 +24,15 @@ namespace RoleTopMVC.Controllers
             {
                 Cliente cliente = new Cliente(
                     form["nome"],
+                    form["email"],
+                    form["cpf"],
                     form["endereco"],
                     form["telefone"],
                     form["senha"],
-                    form["email"],
                     DateTime.Parse(form["data-nascimento"]));
 
                     clienteRepository.Inserir(cliente);
-                    return View("Sucesso", new RespostaViewModel(){
-                        UsuarioEmail = ObterUsuarioSession(),
-                        UsuarioNome = ObterUsuarioNomeSession()
-                    });
+                    return View("Sucesso");
             }
             catch (Exception e)
             {

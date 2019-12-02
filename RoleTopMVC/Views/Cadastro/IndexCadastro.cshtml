@@ -1,30 +1,30 @@
 <main>
     <br/>
         <h2>Cadastre-se</h2>
-        <form method="GET" action="usuario.html">
+        <form method="POST" action='@Url.Action("CadastrarCliente", "Cadastro")'>
 
             <div>
                 <label for="nome">Nome Completo</label>
                 <br />
-                <input id="nome" type="nome" maxlength="40" minlength="10" name="E-mail" />
+                <input id="nome" type="nome" maxlength="40" minlength="10" name="nome" />
             </div>
 
             <div>
                 <label for="email">E-mail</label>
                 <br />
-                <input id="email" type="email" maxlength="35" minlength="10" />
+                <input id="email" type="email" maxlength="35" minlength="10" name="email" />
             </div>
 
             <div>
                 <label for="CPF">CPF</label>
                 <br />
-                <input id="CPF" type="CPF" maxlength="11" minlength="11" />
+                <input id="CPF" type="CPF" maxlength="11" minlength="11" name="cpf" />
             </div>
 
             <div>
                 <label for="data de nascimento">Data de Nascimento</label>
                 <br />
-                <input id="data de nascimento" type="date" maxlength="10" minlength="10" />
+                <input id="data de nascimento" type="date" maxlength="10" minlength="10" name="data-nascimento" />
             </div>
 
             <div>

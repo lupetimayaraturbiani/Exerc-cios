@@ -1,11 +1,15 @@
 using System;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using RoleTopMVC.Repositories;
 
 namespace RoleTopMVC.Controllers
 {
     public class ClienteController : Controller
     {
+
+        private ClienteRepository clienteRepository = new ClienteRepository();
+
         [HttpGet]
         public IActionResult Login()
         {
@@ -22,6 +26,8 @@ namespace RoleTopMVC.Controllers
                 System.Console.WriteLine(form["email"]);
                 System.Console.WriteLine(form["senha"]);
                 System.Console.WriteLine("==================");
+
+                
 
                 return View("Cadastrado com sucesso!");
             }
