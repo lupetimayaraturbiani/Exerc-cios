@@ -32,7 +32,10 @@ namespace RoleTopMVC.Controllers
                     DateTime.Parse(form["data-nascimento"]));
 
                     clienteRepository.Inserir(cliente);
-                    return View("Sucesso");
+                    return View("Sucesso", new RespostaViewModel(){
+                        UsuarioEmail = ObterUsuarioSession(),
+                        UsuarioNome = ObterUsuarioNomeSession()
+                    });
             }
             catch (Exception e)
             {

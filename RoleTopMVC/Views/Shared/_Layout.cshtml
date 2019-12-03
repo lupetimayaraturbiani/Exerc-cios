@@ -1,8 +1,4 @@
-﻿@{
-    var nomeView = (string) ViewData["NomeView"];
-}
-
-
+﻿@model RoleTopMVC.ViewModels.BaseViewModel
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -14,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css?family=Manjari&display=swap" rel="stylesheet" />
     <title>Pagina inicial</title>
     
-    @if(!"Home".Equals(nomeView))
+    @if(!"Home".Equals(@Model.NomeView))
     {
         <link href="~/css/fotos.css" rel="stylesheet" type="text/css"/>
         <link href="~/css/login.css" rel="stylesheet" type="text/css"/>
@@ -33,12 +29,16 @@
                 
                 <li class="bt-commom-menu"><a onclick="toggleMobileMenu()" asp-controller="Home" asp-action="Index" class="active" >Inicial</a></li>
                 <li class="bt-commom-menu"><a onclick="toggleMobileMenu()" asp-controller="Galeria" asp-action="Fotos" >Fotos</a></li>
-                <li class="bt-commom-menu"><a onclick="toggleMobileMenu()" asp-controller="Cliente" asp-action="Login">Login</a></li>
+                @if (string.IsNullOrEmpty(@Model.UsuarioEmail))
+                {
+                    <li class="bt-commom-menu"><a onclick="toggleMobileMenu()" asp-controller="Cliente" asp-action="Login">Login</a></li>
+                }
+                // ACRESCENTAR PARTE DE LOGOFF
                 <li class="bt-commom-menu"><a onclick="toggleMobileMenu()" asp-controller="Mais" asp-action="Mais">Mais</a></li>
             </ul>
         </nav>
         
-        @if("Home".Equals(nomeView))
+        @if("Home".Equals(@Model.NomeView))
         {
             Html.RenderPartial("_HeaderHomePage");
         }
@@ -46,7 +46,7 @@
 
     </header>
 
-            @RenderBody()
+    @RenderBody()
 
 <section id="rodape">
         <footer>

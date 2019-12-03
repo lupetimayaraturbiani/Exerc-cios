@@ -11,20 +11,21 @@ namespace RoleTopMVC.Models
         public string Senha {get;set;}
         public string Email {get;set;}
         public DateTime DataNascimento {get;set;}
+        public uint TipoUsuario {get;set;}
 
         public Cliente()
         {
 
         }
 
-        public Cliente(string nome, string endereco, string cpf, string telefone, string senha, string email, DateTime dataNascimento)
+        public Cliente(string nome, string email, string cpf, string endereco, string telefone, string senha, DateTime dataNascimento)
         {
             this.Nome = nome;
-            this.Endereco = endereco;
+            this.Email = email;
             this.CPF = cpf;
+            this.Endereco = endereco;
             this.Telefone = telefone;
             this.Senha = senha;
-            this.Email = email;
             this.DataNascimento = dataNascimento;
         }
     }
