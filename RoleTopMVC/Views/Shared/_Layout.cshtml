@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=., initial-scale=1.0">
     <!-- <meta name="viewport" content="width=., initial-scale=1.0"> -->
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="css/roletop-principal.css" rel="stylesheet" type="text/css"  />
+    <link href="/css/roletop-principal.css" rel="stylesheet" type="text/css"  />
     <link href="https://fonts.googleapis.com/css?family=Manjari&display=swap" rel="stylesheet" />
     <title>Pagina inicial</title>
     
@@ -29,11 +29,7 @@
                 
                 <li class="bt-commom-menu"><a onclick="toggleMobileMenu()" asp-controller="Home" asp-action="Index" class="active" >Inicial</a></li>
                 <li class="bt-commom-menu"><a onclick="toggleMobileMenu()" asp-controller="Galeria" asp-action="Fotos" >Fotos</a></li>
-                @if (string.IsNullOrEmpty(@Model.UsuarioEmail))
-                {
-                    <li class="bt-commom-menu"><a onclick="toggleMobileMenu()" asp-controller="Cliente" asp-action="Login">Login</a></li>
-                }
-                // ACRESCENTAR PARTE DE LOGOFF
+            <li class="bt-commom-menu"><a onclick="toggleMobileMenu()" asp-controller="Cliente" asp-action="Login">Login</a></li>
                 <li class="bt-commom-menu"><a onclick="toggleMobileMenu()" asp-controller="Mais" asp-action="Mais">Mais</a></li>
             </ul>
         </nav>

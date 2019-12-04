@@ -10,11 +10,12 @@ namespace RoleTopMVC.Models
         public Cliente Cliente {get;set;}
         public string Nome {get;set;}
         public DateTime DataEvento {get;set;}
-        public List<TiposEvento> TiposEvento {get;set;}
-        public List<ServicosAdicionais> ServicosAdicionais {get;set;}
-        public string CPF {get;set;}
-        public string Horario {get;set;}
+        public TiposEvento TiposEvento {get;set;}
+        public ServicosAdicionais ServicosAdicionais {get;set;}
+        public DateTime Horario {get;set;}
         public string Pagamento {get;set;}
+        public string Descricao {get;set;}
+        public double Preco {get;set;}
         public uint Status {get;set;}
 
         public Evento()

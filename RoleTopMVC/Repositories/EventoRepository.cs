@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.IO;
 using RoleTopMVC.Models;
@@ -58,8 +59,68 @@ namespace RoleTopMVC.Repositories
                 evento.Cliente.Email = ExtrairValorDoCampo("cliente_email", linha);
                 evento.Cliente.Telefone = ExtrairValorDoCampo("cliente_telefone", linha);
                 evento.Nome = ExtrairValorDoCampo("nome", linha);
-                evento.
+                evento.TiposEvento.Nome = ExtrairValorDoCampo("tipos_evento_nome", linha);
+                evento.TiposEvento.Preco = double.Parse(ExtrairValorDoCampo("tipos_evento_preco", linha));
+                evento.ServicosAdicionais.Nome = ExtrairValorDoCampo("servicos_adicionais_nome", linha);
+                evento.ServicosAdicionais.Preco = double.Parse(ExtrairValorDoCampo("servicos_adicionais_preco", linha));
+                evento.DataEvento = DateTime.Parse(ExtrairValorDoCampo("data_evento", linha));
+                evento.Horario = DateTime.Parse(ExtrairValorDoCampo("horario", linha));
+                evento.Pagamento = ExtrairValorDoCampo("pagamento", linha);
+                evento.Descricao = ExtrairValorDoCampo("descricao", linha);
+
+                eventos.Add(evento);
             }
+
+            return eventos;
+        }
+
+        public Evento ObterPor(ulong id)
+        {
+            var eventosTotais = ObterTodos();
+            foreach (var evento in eventosTotais)
+            {
+                if (id.Equals(evento.Id))
+                {
+                    return evento;
+                }
+            }
+            return null;
+        }
+
+        public bool Atualizar(Evento evento)
+        {
+            var eventosTotais = File.ReadAllLines(PATH);
+            var eventoCSV = PrepararEventoCSV(evento);
+            var linhaEvento = -1;
+            var resultado = false;
+
+            for (int i = 0; i < eventosTotais.Length; i++)
+            {
+                var idConvertido = ulong.Parse(ExtrairValorDoCampo("id", eventosTotais[i]));
+                if (evento.Id.Equals(idConvertido))
+                {
+                    linhaEvento = i;
+                    resultado = true;
+                    break;
+                }
+                
+            }
+
+            if (resultado)
+            {
+                eventosTotais[linhaEvento] = eventoCSV;
+                File.WriteAllLines(PATH, eventosTotais);
+            }
+            return resultado;
+        }
+
+        private string PrepararEventoCSV(Evento evento)
+        {
+            Cliente c = evento.Cliente;
+            ServicosAdicionais sa = evento.ServicosAdicionais;
+            TiposEvento te = evento.TiposEvento;
+
+            return $"id={evento.Id};status_evento={evento.Status};cliente_nome={c.Nome};cliente_email={c.Email};cliente_telefone={c.Telefone};evento_nome={evento.Nome};tipos_evento_nome={te.Nome};servicos_adicionais={sa.Nome};data_evento={evento.DataEvento};horario={evento.Horario};pagamento={evento.Pagamento};descricao={evento.Descricao}";
         }
 
     }

@@ -31,7 +31,7 @@
                 <div>
                     <label for="nome">Nome do Evento</label>
                     <br />
-                    <input id="nome" type="nome" maxlength="40" minlength="10" name="E-mail" />
+                    <input id="nome" type="nome" maxlength="40" minlength="10" name="email" />
                 </div>
 
                 <div>
@@ -52,12 +52,20 @@
                     <input id="hora" type="time" maxlength="5" minlength="5" />
                 </div>
 
+                <div>
+                    <label for="pagamento">Forma de Pagamento</label>
+                    <br />
+                    <input id="pagamento" type="text" maxlength="5" minlength="5" />
+                </div>
+
                 <label for="categoria">Serviços Adicionais</label>
                 <br />
                 <select id='select' name='select'>
                     <option value=''></option>
                     <option value='div1'>Iluminação</option>
                     <option value='div2'>Som</option>
+                    <option value='div2'>Som e Iluminação</option>
+                    <option value='div2'>Nenhum</option>
 
                 </select>
                 <br />
