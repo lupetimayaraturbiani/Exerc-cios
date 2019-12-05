@@ -15,6 +15,7 @@ namespace RoleTopMVC.Models
         public DateTime Horario {get;set;}
         public string Pagamento {get;set;}
         public string Descricao {get;set;}
+        public double PrecoTotal {get;set;}
         public double Preco {get;set;}
         public uint Status {get;set;}
 

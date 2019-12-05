@@ -1,13 +1,17 @@
 using Microsoft.AspNetCore.Mvc;
+using RoleTopMVC.ViewModels;
 
 namespace RoleTopMVC.Controllers
 {
-    public class MaisController : Controller
+    public class MaisController : AbstractController
     {
         public IActionResult Mais()
         {
-            ViewData["NomeView"] = "Mais";
-            return View();
+            return View(new BaseViewModel(){
+                NomeView = "Mais",
+                UsuarioEmail = ObterUsuarioSession(),
+                UsuarioNome = ObterUsuarioNomeSession()
+            });
         }
     }
 }

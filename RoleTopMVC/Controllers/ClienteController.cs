@@ -12,6 +12,8 @@ namespace RoleTopMVC.Controllers
 
         private ClienteRepository clienteRepository = new ClienteRepository();
 
+        private EventoRepository eventoRepository = new EventoRepository();
+
         [HttpGet]
         public IActionResult Login()
         {
@@ -72,6 +74,27 @@ namespace RoleTopMVC.Controllers
 
                 return View("Erro ao cadastrar");           
             }
+        }
+
+        public IActionResult Usuario()
+        {
+            var emailCliente = HttpContext.Session.GetString(SESSION_CLIENTE_EMAIL);
+            var eventosCliente = eventoRepository.ObterTodosPorCliente(emailCliente);
+
+            return View(new UsuarioViewModel(){
+                Eventos = eventosCliente,
+                NomeView = "Usuario",
+                UsuarioEmail = ObterUsuarioSession(),
+                UsuarioNome = ObterUsuarioNomeSession()
+            });
+        }
+
+        public IActionResult Logoff()
+        {
+            HttpContext.Session.Remove(SESSION_CLIENTE_EMAIL);
+            HttpContext.Session.Remove(SESSION_CLIENTE_NOME);
+            HttpContext.Session.Clear();
+            return RedirectToAction("Index", "Home");
         }
     }
 }

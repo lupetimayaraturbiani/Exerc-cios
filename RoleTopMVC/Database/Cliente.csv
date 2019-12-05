@@ -1,1 +1,2 @@
-nome=nao ;email=nao@gmail.com;cpf=12312312312;senha=123456;endereco=nao sei 123;telefone=11 12341234;data_nascimento=30/08/2003 00:00:00
+tipo_usuario=0;nome=administrador;email=adm@gmail.com;cpf=12312312312;senha=adm123;endereco=nao sei 123;telefone=11 1234 123;data_nascimento=24/08/2001 00:00:00
+tipo_usuario=1;nome=geraldo silva;email=gesilva@gmail.com;cpf=12312312312;senha=123456;endereco=nao sei 123;telefone=11 1234 123;data_nascimento=24/08/2001 00:00:00

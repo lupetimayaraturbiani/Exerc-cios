@@ -1,13 +1,17 @@
 using Microsoft.AspNetCore.Mvc;
+using RoleTopMVC.ViewModels;
 
 namespace RoleTopMVC.Controllers
 {
-    public class GaleriaController : Controller
+    public class GaleriaController : AbstractController
     {
         public IActionResult Fotos()
         {
-            ViewData["NomeView"] = "Galeria";
-            return View();
+            return View(new BaseViewModel(){
+                NomeView = "Galeria",
+                UsuarioEmail = ObterUsuarioSession(),
+                UsuarioNome = ObterUsuarioNomeSession()
+            });
         }
     }
 }

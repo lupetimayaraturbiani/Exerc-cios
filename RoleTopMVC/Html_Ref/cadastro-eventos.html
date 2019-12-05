@@ -1,29 +1,4 @@
-<!DOCTYPE html>
-<html lang="pt-br">
 
-<head>
-    <meta charset="UTF-8">
-    <!-- <meta name="viewport" content="width=., initial-scale=1.0"> -->
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" type="text/css" href="css/cadastro-eventos.css" />
-    <link href="https://fonts.googleapis.com/css?family=Manjari&display=swap" rel="stylesheet">
-    <title>Pagina inicial</title>
-</head>
-
-<body>
-    <header>
-        <section id="logo-area">
-            <img class="logo" src="img/logo.png" />
-        </section>
-        <nav>
-            <ul>
-                <li><a href="roletop-principal.html">Inicial</a></li>
-                <li><a href="fotos.html">Galeria de Fotos</a></li>
-                <li><a href="login.html">Login</a></li>
-                <li><a href="mais.html">Mais</a></li>
-            </ul>
-        </nav>
-    </header>
     <main>
         <h2>Cadastre seu evento</h2>
         <section id="cadastro">
@@ -31,36 +6,30 @@
                 <div>
                     <label for="nome">Nome do Evento</label>
                     <br />
-                    <input id="nome" type="nome" maxlength="40" minlength="10" name="email" />
+                    <input id="nome" type="nome" maxlength="40" minlength="10" name="email" name="nome" />
                 </div>
 
                 <div>
                     <label for="data do evento">Data do Evento</label>
                     <br />
-                    <input id="data do evento" type="date" maxlength="10" minlength="10" />
-                </div>
-
-                <div>
-                    <label for="CPF ou CNPJ">CPF ou CNPJ</label>
-                    <br />
-                    <input id="CPF ou CNPJ" type="CPF/CNPJ" maxlength="11" minlength="11" />
+                    <input id="data do evento" type="date" maxlength="10" minlength="10" name="data_evento"/>
                 </div>
 
                 <div>
                     <label for="hora">Horário do Evento</label>
                     <br />
-                    <input id="hora" type="time" maxlength="5" minlength="5" />
+                    <input id="hora" type="time" maxlength="5" minlength="5" name="horario" />
                 </div>
 
                 <div>
                     <label for="pagamento">Forma de Pagamento</label>
                     <br />
-                    <input id="pagamento" type="text" maxlength="5" minlength="5" />
+                    <input id="pagamento" type="text" maxlength="5" minlength="5" name="pagamento"/>
                 </div>
 
                 <label for="categoria">Serviços Adicionais</label>
                 <br />
-                <select id='select' name='select'>
+                <select id='select' name="servicos_adicionais">
                     <option value=''></option>
                     <option value='div1'>Iluminação</option>
                     <option value='div2'>Som</option>
@@ -71,34 +40,20 @@
                 <br />
                 <label for="categoria">Categoria</label>
                 <br />
-                <select id='select' name='select'>
-                    <option value=''></option>
-                    <option value='div1'>Casamento</option>
-                    <option value='div2'>Aniversário</option>
-                    <option value='div3'>Show</option>
-                    <option value='div4'>Festa de 15 anos</option>
-                    <option value='div5'>Outro</option>
+                <select id="select" name="tipos_evento">
+                    <option value=""  disabled selected>Selecione</option>
+                    @foreach (var tipos_evento in Model.Hamburgueres)
+                    {
+                        <option value=@tipos_evento.Nome>@tipos_evento.Nome por @tipos_evento.Preco</option>
+                    }
                 </select>
                 <br />
                 <label for="descricao"> Descrição do Evento</label>
                 <br />
-                <textarea name="descricao" id="descricao" cols="8" rows="6"
+                <textarea name="descricao" id="descricao" cols="8" rows="6" name="descricao"></textarea>
                     placeholder="Descrição do evento"></textarea>
                 <br />
                 <input type="submit" value="Cadastrar evento" />
             </form>
         </section>
     </main>
-
-    <section id="rodape">
-        <footer>
-            <address>
-                Avenida de Limeira, 539 - Campos Elíseos - SP
-                <br />
-                11 1234 6789
-            </address>
-        </footer>
-        <a href="#">Inicio da página</a>
-    </section>
-
-</body>
