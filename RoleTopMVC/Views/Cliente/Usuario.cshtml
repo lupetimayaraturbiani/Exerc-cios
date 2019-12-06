@@ -1,5 +1,10 @@
+@model RoleTopMVC.ViewModels.UsuarioViewModel
+@{
+    ViewData["Title"] = "Usuario - RoleTop";
+    ViewData["H2"] = "Página do Usuário";
+}
 <main>
-        <h2>Nome Completo</h2>
+        <h2>@Model.NomeCliente</h2>
 
         <img src="img/icone usuário.png" id="icone-usuario" />
 
@@ -9,17 +14,96 @@
             <br />
             <br />
             <br />
-            <p>Meus Eventos</p> <a href="cadastro-eventos.html">
-                <p>Cadastre seu evento</p>
-            </a>
+                <h2>Cadastre seu evento</h2>
+        <section id="cadastro">
+            <form method="POST" action='@Url.Action("Registrar", "Evento")'>
+                <div>
+                    <label for="nome">Nome do Evento</label>
+                    <br />
+                    <input id="nome" type="nome" maxlength="40" minlength="10" name="email" name="nome" />
+                </div>
+
+                <div>
+                    <label for="data do evento">Data do Evento</label>
+                    <br />
+                    <input id="data do evento" type="date" maxlength="10" minlength="10" name="data_evento"/>
+                </div>
+
+                <div>
+                    <label for="hora">Horário do Evento</label>
+                    <br />
+                    <input id="hora" type="time" maxlength="5" minlength="5" name="horario" />
+                </div>
+
+                <div>
+                    <label for="pagamento">Forma de Pagamento</label>
+                    <br />
+                    <input id="pagamento" type="text" maxlength="5" minlength="5" name="pagamento"/>
+                </div>
+
+                <label for="categoria">Serviços Adicionais</label>
+                <br />
+                <select id='select' name="servicos_adicionais">
+                    <option value=""  disabled selected>Selecione</option>
+                    @foreach (var servicosAdicionais in Model.ServicosAdicionais)
+                    {
+                        <option value=@servicosAdicionais.Nome>@servicosAdicionais.Nome por @servicosAdicionais.Preco</option>
+                    }
+
+                </select>
+                <br />
+                <label for="categoria">Categoria</label>
+                <br />
+                <select id="select" name="tipos_evento">
+                    <option value=""  disabled selected>Selecione</option>
+                    @foreach (var tipos_evento in Model.TiposEvento)
+                    {
+                        <option value=@tipos_evento.Nome>@tipos_evento.Nome por @tipos_evento.Preco</option>
+                    }
+                </select>
+                <br />
+                <label for="descricao"> Descrição do Evento</label>
+                <br />
+                <textarea placeholder="Descrição do evento"name="descricao" id="descricao"  name="descricao"></textarea>
+                    
+                <br />
+                <input type="submit" value="Cadastrar evento" />
+            </form>
+        </section>
+
+        <br />
+        <br />
+
+        <p>Meus Eventos</p>
+        <h2>@ViewData["H2"]</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Data do Evento</th>
+                <th>Horário</th>
+                <th>Tipo de Evento</th>
+                <th>Descrição</th>
+                <th>Serviços Adicionais</th>
+                <th>Preço Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach( var evento in Model.Eventos ) {
+                <tr>
+                    <td>@evento.Nome</td>
+                    <td>@evento.DataEvento</td>
+                    <td>@evento.Horario</td>
+                    <td>@evento.TiposEvento.Nome</td>
+                    <td>@evento.Descricao</td>
+                    <td>@evento.ServicosAdicionais.Nome</td>
+                    <td>@evento.PrecoTotal</td>
+                </tr>
+            }
+        </tbody>
+    </table>
 
             <p>Cancelamentos</p>
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
+            
         </section>
     </main>
