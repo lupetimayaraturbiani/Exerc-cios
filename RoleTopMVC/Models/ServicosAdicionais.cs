@@ -1,6 +1,6 @@
 namespace RoleTopMVC.Models
 {
-    public class ServicosAdicionais : Evento
+    public class ServicosAdicionais : Produto
     {
         //ARRUMAR E DEIXAR QUE NEM HAMBURGUERES MCBONALDS
         public ServicosAdicionais()

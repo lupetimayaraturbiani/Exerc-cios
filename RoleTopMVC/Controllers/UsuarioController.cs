@@ -45,7 +45,7 @@ namespace RoleTopMVC.Controllers
                 uvm.Cliente = clienteLogado;
             }
 
-            uvm.NomeView = "Evento";
+            uvm.NomeView = "Cliente";
             uvm.UsuarioEmail = ObterUsuarioSession();
             uvm.UsuarioNome = ObterUsuarioNomeSession();
 
@@ -59,12 +59,12 @@ namespace RoleTopMVC.Controllers
 
             Evento evento = new Evento();
 
-            var nomeTiposEvento = form["tipos_evento"];
+            var nomeTiposEvento = form["tiposEvento"];
             TiposEvento tiposEvento = new TiposEvento(nomeTiposEvento, tiposEventoRepository.ObterPrecoDe(nomeTiposEvento));
 
             evento.TiposEvento = tiposEvento;
 
-            var nomeServicosAdicionais = form["servicos_adicionais"];
+            var nomeServicosAdicionais = form["servicosAdicionais"];
             ServicosAdicionais servicosAdicionais = new ServicosAdicionais(nomeServicosAdicionais, servicosAdicionaisRepository.ObterPrecoDe(nomeServicosAdicionais));
 
             evento.ServicosAdicionais = servicosAdicionais;

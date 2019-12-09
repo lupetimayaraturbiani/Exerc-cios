@@ -13,5 +13,12 @@ namespace RoleTopMVC.Controllers
                 UsuarioNome = ObterUsuarioNomeSession()
             });
         }
+
+        public IActionResult EnviarDuvida()
+        {
+            return View("Sucesso", new BaseViewModel(){
+                NomeView = "FAQ",
+            });
+        }
     }
 }

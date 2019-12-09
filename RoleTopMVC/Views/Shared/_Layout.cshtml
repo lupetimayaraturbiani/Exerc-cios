@@ -17,6 +17,17 @@
         <link href="~/css/mais.css" rel="stylesheet" type="text/css" />
     }
 
+    @if ("Usuario".Equals(@Model.NomeView))
+    {
+        <link href="~/css/usuario.css" rel="stylesheet" type="text/css">
+    }
+
+    @if ("Dashboard".Equals(@Model.NomeView))
+    {
+        <link href="~/css/usuario.css" rel="stylesheet" type="text/css">
+    }
+
+    //ADICIONAR IF PARA O CSS DO DASHBOARD E DA PAGINA DO USUARIO
 </head>
 
 <body>
@@ -26,10 +37,16 @@
         </section>
         <nav>
             <ul>
-                
                 <li class="bt-commom-menu"><a onclick="toggleMobileMenu()" asp-controller="Home" asp-action="Index" class="active" >Inicial</a></li>
                 <li class="bt-commom-menu"><a onclick="toggleMobileMenu()" asp-controller="Galeria" asp-action="Fotos" >Fotos</a></li>
-            <li class="bt-commom-menu"><a onclick="toggleMobileMenu()" asp-controller="Cliente" asp-action="Login">Login</a></li>
+                @if(string.IsNullOrEmpty(@Model.UsuarioEmail))
+                {
+                    <li class="bt-commom-menu"><a onclick="toggleMobileMenu()" asp-controller="Cliente" asp-action="Login">Login</a></li>
+                }
+                else
+                {
+                    <li class="bt-common-menu"><a onclick="toggleMobileMenu()" asp-controller="Cliente" asp-action="Logoff">Logoff</a></li>
+                }
                 <li class="bt-commom-menu"><a onclick="toggleMobileMenu()" asp-controller="Mais" asp-action="Mais">Mais</a></li>
             </ul>
         </nav>

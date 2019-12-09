@@ -1,6 +1,6 @@
 namespace RoleTopMVC.Models
 {
-    public class TiposEvento : Evento
+    public class TiposEvento : Produto
     {
         // ARRUMAR E DEIXAR QUE NEM HAMBURGUERES MCBONALDS
 

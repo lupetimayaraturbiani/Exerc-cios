@@ -1,12 +1,11 @@
 @model RoleTopMVC.ViewModels.UsuarioViewModel
 @{
     ViewData["Title"] = "Usuario - RoleTop";
-    ViewData["H2"] = "Página do Usuário";
 }
 <main>
         <h2>@Model.NomeCliente</h2>
 
-        <img src="img/icone usuário.png" id="icone-usuario" />
+        <img src="/img/icone usuário.png" id="icone-usuario" />
 
         <section class="topicos">
             <p>Minha Conta</p>
@@ -16,11 +15,12 @@
             <br />
                 <h2>Cadastre seu evento</h2>
         <section id="cadastro">
-            <form method="POST" action='@Url.Action("Registrar", "Evento")'>
+            <form method="POST" action='@Url.Action("Registrar", "Usuario")'>
+                
                 <div>
                     <label for="nome">Nome do Evento</label>
                     <br />
-                    <input id="nome" type="nome" maxlength="40" minlength="10" name="email" name="nome" />
+                    <input id="nome" type="text" maxlength="20" minlength="3"  name="nomeEvento"/>
                 </div>
 
                 <div>
@@ -41,30 +41,34 @@
                     <input id="pagamento" type="text" maxlength="5" minlength="5" name="pagamento"/>
                 </div>
 
-                <label for="categoria">Serviços Adicionais</label>
+                <label for="servicosAdicionais">Serviços Adicionais</label>
                 <br />
-                <select id='select' name="servicos_adicionais">
+                <select id="servicosAdicionais" name="servicosAdicionais" required>
                     <option value=""  disabled selected>Selecione</option>
                     @foreach (var servicosAdicionais in Model.ServicosAdicionais)
                     {
-                        <option value=@servicosAdicionais.Nome>@servicosAdicionais.Nome por @servicosAdicionais.Preco</option>
+                        <option value=@servicosAdicionais.Nome>@servicosAdicionais.Nome por @servicosAdicionais.Preco
+
+                        </option>
                     }
 
                 </select>
                 <br />
-                <label for="categoria">Categoria</label>
+                <label for="tiposEvento">Tipo de Evento</label>
                 <br />
-                <select id="select" name="tipos_evento">
+                <select id="tiposEvento" name="tiposEvento" required>
                     <option value=""  disabled selected>Selecione</option>
-                    @foreach (var tipos_evento in Model.TiposEvento)
+                    @foreach (var tiposEvento in Model.TiposEvento)
                     {
-                        <option value=@tipos_evento.Nome>@tipos_evento.Nome por @tipos_evento.Preco</option>
+                        <option value=@tiposEvento.Nome>@tiposEvento.Nome por @tiposEvento.Preco
+
+                        </option>
                     }
                 </select>
                 <br />
                 <label for="descricao"> Descrição do Evento</label>
                 <br />
-                <textarea placeholder="Descrição do evento"name="descricao" id="descricao"  name="descricao"></textarea>
+                <textarea placeholder="Descrição do evento"name="descricao" id="descricao" ></textarea>
                     
                 <br />
                 <input type="submit" value="Cadastrar evento" />
@@ -75,7 +79,6 @@
         <br />
 
         <p>Meus Eventos</p>
-        <h2>@ViewData["H2"]</h2>
     <table>
         <thead>
             <tr>
@@ -91,7 +94,7 @@
         <tbody>
             @foreach( var evento in Model.Eventos ) {
                 <tr>
-                    <td>@evento.Nome</td>
+                    <td>@evento.NomeEvento</td>
                     <td>@evento.DataEvento</td>
                     <td>@evento.Horario</td>
                     <td>@evento.TiposEvento.Nome</td>

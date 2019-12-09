@@ -34,6 +34,7 @@ namespace RoleTopMVC.Controllers
                     form["endereco"],
                     form["telefone"],
                     form["senha"],
+                    form ["confirma_senha"],
                     DateTime.Parse(form["data-nascimento"]));
 
                     cliente.TipoUsuario = (uint) TiposUsuario.CLIENTE;

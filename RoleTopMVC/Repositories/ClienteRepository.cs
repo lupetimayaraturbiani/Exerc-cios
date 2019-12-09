@@ -41,6 +41,7 @@ namespace RoleTopMVC.Repositories
                     c.Endereco = ExtrairValorDoCampo("endereco", item);
                     c.Telefone = ExtrairValorDoCampo("telefone", item);
                     c.Senha = ExtrairValorDoCampo("senha", item);
+                    c.ConfirmaSenha = ExtrairValorDoCampo("confirma_senha", item);
 
                     return c;
                 }
@@ -50,7 +51,7 @@ namespace RoleTopMVC.Repositories
 
         private string PrepararRegistroCSV(Cliente cliente)
         {
-            return $"tipo_usuario={cliente.TipoUsuario};nome={cliente.Nome};email={cliente.Email};cpf={cliente.CPF};senha={cliente.Senha};endereco={cliente.Endereco};telefone={cliente.Telefone};data_nascimento={cliente.DataNascimento}";
+            return $"tipo_usuario={cliente.TipoUsuario};nome={cliente.Nome};email={cliente.Email};cpf={cliente.CPF};senha={cliente.Senha};confirma_senha={cliente.ConfirmaSenha};endereco={cliente.Endereco};telefone={cliente.Telefone};data_nascimento={cliente.DataNascimento}";
         }
     }
 }

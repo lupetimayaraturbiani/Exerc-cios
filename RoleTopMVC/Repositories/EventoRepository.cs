@@ -58,7 +58,7 @@ namespace RoleTopMVC.Repositories
                 evento.Cliente.Nome = ExtrairValorDoCampo("cliente_nome", linha);
                 evento.Cliente.Email = ExtrairValorDoCampo("cliente_email", linha);
                 evento.Cliente.Telefone = ExtrairValorDoCampo("cliente_telefone", linha);
-                evento.Nome = ExtrairValorDoCampo("nome", linha);
+                evento.NomeEvento = ExtrairValorDoCampo("nome_evento", linha);
                 evento.TiposEvento.Nome = ExtrairValorDoCampo("tipos_evento_nome", linha);
                 evento.TiposEvento.Preco = double.Parse(ExtrairValorDoCampo("tipos_evento_preco", linha));
                 evento.ServicosAdicionais.Nome = ExtrairValorDoCampo("servicos_adicionais_nome", linha);
@@ -120,7 +120,7 @@ namespace RoleTopMVC.Repositories
             ServicosAdicionais sa = evento.ServicosAdicionais;
             TiposEvento te = evento.TiposEvento;
 
-            return $"id={evento.Id};status_evento={evento.Status};cliente_nome={c.Nome};cliente_email={c.Email};cliente_telefone={c.Telefone};evento_nome={evento.Nome};tipos_evento_nome={te.Nome};servicos_adicionais={sa.Nome};data_evento={evento.DataEvento};horario={evento.Horario};pagamento={evento.Pagamento};descricao={evento.Descricao}";
+            return $"id={evento.Id};status_evento={evento.Status};cliente_nome={c.Nome};cliente_email={c.Email};cliente_telefone={c.Telefone};evento_nome={evento.NomeEvento};tipos_evento_nome={te.Nome};tipo_evento_preco={te.Preco};servicos_adicionais={sa.Nome};servicos_adicionais_preco={sa.Preco};data_evento={evento.DataEvento};horario={evento.Horario};pagamento={evento.Pagamento};descricao={evento.Descricao}";
         }
 
     }
