@@ -1,6 +1,7 @@
 using System;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using RoleTopMVC.Enums;
 using RoleTopMVC.Models;
 using RoleTopMVC.Repositories;
 using RoleTopMVC.ViewModels;
@@ -93,6 +94,44 @@ namespace RoleTopMVC.Controllers
             else
             {
                 return View("Erro");
+            }
+        }
+
+        public IActionResult Aprovar(ulong id)
+        {
+            var evento = eventoRepository.ObterPor(id);
+            evento.Status = (uint) StatusEvento.APROVADO;
+
+            if (eventoRepository.Atualizar(evento))
+            {
+                return RedirectToAction("Dashboard", "Administrador");
+            }
+            else
+            {
+                return View("Erro", new RespostaViewModel("Não foi possível aprovar esse evento"){
+                    NomeView = "Dashboard",
+                    UsuarioEmail = ObterUsuarioSession(),
+                    UsuarioNome = ObterUsuarioNomeSession()
+                });
+            }
+        }
+
+        public IActionResult Reprovar(ulong id)
+        {
+            var evento = eventoRepository.ObterPor(id);
+            evento.Status = (uint) StatusEvento.REPROVADO;
+
+            if (eventoRepository.Atualizar(evento))
+            {
+                return RedirectToAction("Dashboard", "Administrador");
+            }
+            else
+            {
+                return View("Erro", new RespostaViewModel("Não foi possível reprovar esse evento"){
+                    NomeView = "Dashboard",
+                    UsuarioEmail = ObterUsuarioSession(),
+                    UsuarioNome = ObterUsuarioNomeSession()
+                });
             }
         }
     }

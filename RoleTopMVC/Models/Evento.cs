@@ -23,6 +23,8 @@ namespace RoleTopMVC.Models
             this.Cliente = new Cliente();
             this.Id = 0;
             this.Status = (uint) StatusEvento.PENDENTE;
+            this.TiposEvento = new TiposEvento();
+            this.ServicosAdicionais = new ServicosAdicionais();
         }
     }
 }

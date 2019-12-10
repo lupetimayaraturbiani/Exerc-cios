@@ -43,7 +43,7 @@
 
                 <label for="servicosAdicionais">Serviços Adicionais</label>
                 <br />
-                <select id="servicosAdicionais" name="servicosAdicionais" required>
+                <select id="servicosAdicionais" name="servicosAdicionais" >
                     <option value=""  disabled selected>Selecione</option>
                     @foreach (var servicosAdicionais in Model.ServicosAdicionais)
                     {
@@ -56,7 +56,7 @@
                 <br />
                 <label for="tiposEvento">Tipo de Evento</label>
                 <br />
-                <select id="tiposEvento" name="tiposEvento" required>
+                <select id="tiposEvento" name="tiposEvento" >
                     <option value=""  disabled selected>Selecione</option>
                     @foreach (var tiposEvento in Model.TiposEvento)
                     {

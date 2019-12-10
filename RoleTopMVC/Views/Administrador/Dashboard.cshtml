@@ -1,93 +1,64 @@
-<main>
-        <section id="Dashboard">
-            <h2>Aceite e Recusa de Eventos</h2>
+@model RoleTopMVC.ViewModels.DashboardViewModel
+    <main>
+        <h2>Dashboard</h2>
+        <section id="status-pedidos">
+            <h3>Status dos pedidos</h3>
+            <div id="painel">
+                <div class="box-status-pedidos aprovados">
+                    <h4>Aprovados</h4>
+                    <p>@Model.EventosAprovados</p>
+                </div>
+                <div class="box-status-pedidos pendentes">
+                    <h4>Pendentes</h4>
+                    <p>@Model.EventosPendentes</p>
+                </div>
+                <div class="box-status-pedidos reprovados">
+                    <h4>Reprovados</h4>
+                    <p>@Model.EventosReprovados</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="lista-pedidos">
+            <h3>Lista de pedidos</h3>
             <table>
                 <thead>
                     <tr>
-                        <th rowspan="2">Nome do evento</th>
-                        <th rowspan="3">Data e Horário</th>
-                        <th colspan="1">Categoria</th>
-                        <th rowspan="2">Serviços Adicionais</th>
-                        <th colspan="1" rowspan="1">Aprovar Evento</th>
-                        <th colspan="1" rowspan="1">Cancelar Evento</th>
+                        <th rowspan="2">Nome</th>
+                        <th rowspan="2">Data Evento</th>
+                        <th rowspan="2">Horario</th>
+                        <th colspan="2">Evento</th>
+                        <th colspan="2" rowspan="2">Aprovar</th>
+                    </tr>
+                    <tr>
+                        <th><i class="fas fa-hamburger"></i></th>
+                        <th><i class="fas fa-mug-hot"></i></th>
+                        <th></th>
+                        <th></th>
                     </tr>
                 </thead>
-
+                <tfoot>
+                    <tr>
+                        <td colspan="6">
+                            <p>Pedidos atualizados em @DateTime.Now</p>
+                        </td>
+                    </tr>
+                </tfoot>
                 <tbody>
-                    <tr>
-                        <td>Casamento Fabrício e Judson</td>
-                        <td>Dia 24/06/2019 às 20hrs</td>
-                        <td>Casamento</td>
-                        <td>Som e Iluminação</td>
-                        <td><a href="#"><i class="fas fa-check"></i></a></td>
-                        <td><a href="#"><i class="fas fa-times"></i></a></td>
-                    </tr>
-                    <tr>
-                        <td>Germinia faz 10 anos</td>
-                        <td>Dia 23/05/2019 às 13hrs</td>
-                        <td>Aniversário</td>
-                        <td>Som</td>
-                        <td><a href="#"><i class="fas fa-check"></i></a></td>
-                        <td><a href="#"><i class="fas fa-times"></i></a></td>
-                    </tr>
+                    @foreach(var evento in Model.Eventos )
+                    {
+                        <tr>
+                            <td>@evento.Cliente.Nome</td>
+                            <td>@evento.DataEvento</td>
+                            <td>@evento.Horario</td>
+                            <td>@evento.TiposEvento.Nome</td>
+                            <td>@evento.ServicosAdicionais.Nome</td>
+                            <td><a href='@Url.Action("Aprovar", "Usuario", new {id = @evento.Id})'><i class="fas fa-check"></i></a></td>
+                            <td><a href='@Url.Action("Reprovar", "Usuario", new {id = @evento.Id})'><i class="fas fa-times"></i></a></td>
+                        </tr>
+                    }
                 </tbody>
             </table>
         </section>
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <section id="Dashboard2">
-            <h2>Situação dos eventos</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th rowspan="3">Nome do evento</th>
-                        <th rowspan="3">Aceito</th>
-                        <th colspan="1">Recusado</th>
-                        <th rowspan="2">Pendentes</th>
-                        <th colspan="2">Realizado</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-                    <tr>
-                        <td>Casamento Fabrício e Judson</td>
-                        <td></td>
-                        <td></td>
-                        <td><a><i class="fas fa-check"></i></a></td>
-                    </tr>
-                    <tr>
-                        <td>Germinia faz 10 anos</td>
-                        <td></td>
-                        <td></td>
-                        <td><a><i class="fas fa-check"></i></a></td>
-                    </tr>
-                </tbody>
-                <tr>
-                    <td>Show Sandy e Júnior</td>
-                    <td><a><i class="fas fa-check"></i></a></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-
-                <tr>
-                    <td>Evento de Intercâmbio Trivago</td>
-                    <td></td>
-                    <td><a><i class="fas fa-check"></i></a></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Evento Coorporativo para parar de Trabalhar</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td><a><i class="fas fa-check"></i></a></td>
-                </tr>
-                </tbody>
-            </table>
-        </section>
-
 
     </main>

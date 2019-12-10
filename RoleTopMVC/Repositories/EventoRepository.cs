@@ -120,7 +120,7 @@ namespace RoleTopMVC.Repositories
             ServicosAdicionais sa = evento.ServicosAdicionais;
             TiposEvento te = evento.TiposEvento;
 
-            return $"id={evento.Id};status_evento={evento.Status};cliente_nome={c.Nome};cliente_email={c.Email};cliente_telefone={c.Telefone};evento_nome={evento.NomeEvento};tipos_evento_nome={te.Nome};tipo_evento_preco={te.Preco};servicos_adicionais={sa.Nome};servicos_adicionais_preco={sa.Preco};data_evento={evento.DataEvento};horario={evento.Horario};pagamento={evento.Pagamento};descricao={evento.Descricao}";
+            return $"id={evento.Id};status={evento.Status};cliente_nome={c.Nome};cliente_email={c.Email};cliente_telefone={c.Telefone};nome_evento={evento.NomeEvento};tipos_evento_nome={te.Nome};tipos_evento_preco={te.Preco};servicos_adicionais_nome={sa.Nome};servicos_adicionais_preco={sa.Preco};data_evento={evento.DataEvento};horario={evento.Horario};pagamento={evento.Pagamento};descricao={evento.Descricao};";
         }
 
     }

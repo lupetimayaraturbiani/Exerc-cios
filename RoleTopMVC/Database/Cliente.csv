@@ -1,2 +1,3 @@
-tipo_usuario=0;nome=administrador;email=adm@gmail.com;cpf=12312312312;senha=adm123;confirma_senha=adm123;endereco=cristo 1231;telefone=11 12341234;data_nascimento=07/08/2007 00:00:00
-tipo_usuario=1;nome=nao sei;email=naosei@gmail.com;cpf=12312312312;senha=123456;confirma_senha=123456;endereco=nao nao 123;telefone=1111111111;data_nascimento=07/09/2015 00:00:00
+tipo_usuario=0;nome=xiquexique;email=adm@gmail.com;cpf=12312312312;senha=adm123;confirma_senha=123456;endereco=lalalalalal;telefone=11 12341234;data_nascimento=10/12/2019 00:00:00
+tipo_usuario=1;nome=xiquexique;email=xiqueplanta@gmail.com;cpf=12312312312;senha=123456;confirma_senha=123456;endereco=lalalalalal;telefone=11 12341234;data_nascimento=10/12/2019 00:00:00
+tipo_usuario=1;nome=nao;email=nao@gmail.com;cpf=12312312312;senha=123456;confirma_senha=123456;endereco=nao sei 123;telefone=1112341234;data_nascimento=10/12/2019 00:00:00
