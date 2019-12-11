@@ -1,46 +1,42 @@
 @model RoleTopMVC.ViewModels.DashboardViewModel
     <main>
         <h2>Dashboard</h2>
-        <section id="status-pedidos">
-            <h3>Status dos pedidos</h3>
+        <section id="status-eventos">
+            <h3>Status dos Eventos</h3>
             <div id="painel">
-                <div class="box-status-pedidos aprovados">
+                <div class="box-status-eventos aprovados">
                     <h4>Aprovados</h4>
                     <p>@Model.EventosAprovados</p>
                 </div>
-                <div class="box-status-pedidos pendentes">
+                <div class="box-status-eventos pendentes">
                     <h4>Pendentes</h4>
                     <p>@Model.EventosPendentes</p>
                 </div>
-                <div class="box-status-pedidos reprovados">
+                <div class="box-status-eventos reprovados">
                     <h4>Reprovados</h4>
                     <p>@Model.EventosReprovados</p>
                 </div>
             </div>
         </section>
 
-        <section id="lista-pedidos">
-            <h3>Lista de pedidos</h3>
+        <section id="lista-eventos">
+            <h3>Lista de eventos</h3>
             <table>
                 <thead>
                     <tr>
                         <th rowspan="2">Nome</th>
                         <th rowspan="2">Data Evento</th>
                         <th rowspan="2">Horario</th>
-                        <th colspan="2">Evento</th>
-                        <th colspan="2" rowspan="2">Aprovar</th>
-                    </tr>
-                    <tr>
-                        <th><i class="fas fa-hamburger"></i></th>
-                        <th><i class="fas fa-mug-hot"></i></th>
-                        <th></th>
-                        <th></th>
+                        <th colspan="2">Tipo de Evento</th>
+                        <th colspan="2">Serviço Adicional</th>
+                        <th colspan="2" rowspan="3">Aprovar</th>
+                        <th colspan="2" rowspan="4">Reprovar</th>
                     </tr>
                 </thead>
                 <tfoot>
                     <tr>
                         <td colspan="6">
-                            <p>Pedidos atualizados em @DateTime.Now</p>
+                            <p>Eventos atualizados em @DateTime.Now</p>
                         </td>
                     </tr>
                 </tfoot>

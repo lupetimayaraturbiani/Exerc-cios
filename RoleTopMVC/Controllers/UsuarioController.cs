@@ -60,28 +60,38 @@ namespace RoleTopMVC.Controllers
 
             Evento evento = new Evento();
 
-            var nomeTiposEvento = form["tiposEvento"];
-            TiposEvento tiposEvento = new TiposEvento(nomeTiposEvento, tiposEventoRepository.ObterPrecoDe(nomeTiposEvento));
-
-            evento.TiposEvento = tiposEvento;
-
-            var nomeServicosAdicionais = form["servicosAdicionais"];
-            ServicosAdicionais servicosAdicionais = new ServicosAdicionais(nomeServicosAdicionais, servicosAdicionaisRepository.ObterPrecoDe(nomeServicosAdicionais));
-
-            evento.ServicosAdicionais = servicosAdicionais;
-
             Cliente cliente = new Cliente()
             {
                 Nome = form["nome"],
                 Email = form["email"],
-                Telefone = form["telefone"],
             };
+
+            string nomeEvento = form["nomeEvento"];
+
+            var dataEvento = form["data_evento"];
+
+            var nomeTiposEvento = form["tiposEvento"];
+            TiposEvento tiposEvento = new TiposEvento(nomeTiposEvento, tiposEventoRepository.ObterPrecoDe(nomeTiposEvento));
+            
+            var nomeServicosAdicionais = form["servicosAdicionais"];
+            ServicosAdicionais servicosAdicionais = new ServicosAdicionais(nomeServicosAdicionais, servicosAdicionaisRepository.ObterPrecoDe(nomeServicosAdicionais));
+            
+            var horario = form["horario"];
+
+            string pagamento = form["pagamento"];
+
+            string descricao = form["descricao"];
+
+            evento.PrecoTotal = tiposEvento.Preco + servicosAdicionais.Preco;
+
+            evento.TiposEvento = tiposEvento;
+
+
+            evento.ServicosAdicionais = servicosAdicionais;
+
 
             evento.Cliente = cliente;
 
-            evento.DataEvento = DateTime.Now;
-
-            evento.PrecoTotal = tiposEvento.Preco + servicosAdicionais.Preco;
 
 
             if (eventoRepository.Inserir(evento))

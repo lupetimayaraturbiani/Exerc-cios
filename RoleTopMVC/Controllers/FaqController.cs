@@ -16,7 +16,7 @@ namespace RoleTopMVC.Controllers
 
         public IActionResult EnviarDuvida()
         {
-            return View("Sucesso", new BaseViewModel(){
+            return View("Sucesso", new RespostaViewModel(){
                 NomeView = "FAQ",
             });
         }
