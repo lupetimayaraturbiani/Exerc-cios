@@ -3,16 +3,14 @@
     ViewData["Title"] = "Usuario - RoleTop";
 }
 <main>
-        <h2>@Model.NomeCliente</h2>
+        <h2>Minha Conta</h2>
 
         <img src="/img/icone usuário.png" id="icone-usuario" />
 
         <section class="topicos">
-            <p>Minha Conta</p>
-            <br />
-            <br />
-            <br />
-            <br />
+            <p>@Model.NomeCliente</p>
+            <p>@Model.Cliente.Email</p>
+            <p>@Model.Cliente.Telefone</p>
                 <h2>Cadastre seu evento</h2>
         <section id="cadastro">
             <form method="POST" action='@Url.Action("Registrar", "Usuario")'>
@@ -24,15 +22,21 @@
                 </div>
 
                 <div>
-                    <label for="nome">Email do Contratante</label>
+                    <label for="email">Email do Contratante</label>
                     <br />
-                    <input id="nome" type="text" value="@Model.Cliente.Email" name="email"/>
+                    <input id="email" type="text" value="@Model.Cliente.Email" name="email"/>
+                </div>
+
+                <div>
+                    <label for="telefone">Telefone do Contratante</label>
+                    <br />
+                    <input id="telefone" type="text" value="@Model.Cliente.Telefone" name="telefone"/>
                 </div>
 
                 <div>
                     <label for="nome">Nome do Evento</label>
                     <br />
-                    <input id="nome" type="text" maxlength="20" minlength="3"  name="nomeEvento"/>
+                    <input id="nome" type="text" maxlength="20" minlength="3"  name="nome_evento"/>
                 </div>
 
                 <div>
@@ -94,7 +98,7 @@
     <table>
         <thead>
             <tr>
-                <th>Nome</th>
+                <th>Nome do Evento</th>
                 <th>Data do Evento</th>
                 <th>Horário</th>
                 <th>Tipo de Evento</th>
@@ -117,8 +121,5 @@
             }
         </tbody>
     </table>
-
-            <p>Cancelamentos</p>
-            
         </section>
     </main>

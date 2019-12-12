@@ -67,6 +67,7 @@ namespace RoleTopMVC.Repositories
                 evento.Horario = DateTime.Parse(ExtrairValorDoCampo("horario", linha));
                 evento.Pagamento = ExtrairValorDoCampo("pagamento", linha);
                 evento.Descricao = ExtrairValorDoCampo("descricao", linha);
+                evento.PrecoTotal = double.Parse(ExtrairValorDoCampo("preco_total", linha));
 
                 eventos.Add(evento);
             }
@@ -120,7 +121,7 @@ namespace RoleTopMVC.Repositories
             ServicosAdicionais sa = evento.ServicosAdicionais;
             TiposEvento te = evento.TiposEvento;
 
-            return $"id={evento.Id};status={evento.Status};cliente_nome={c.Nome};cliente_email={c.Email};cliente_telefone={c.Telefone};nome_evento={evento.NomeEvento};tipos_evento_nome={te.Nome};tipos_evento_preco={te.Preco};servicos_adicionais_nome={sa.Nome};servicos_adicionais_preco={sa.Preco};data_evento={evento.DataEvento};horario={evento.Horario};pagamento={evento.Pagamento};descricao={evento.Descricao};";
+            return $"id={evento.Id};status={evento.Status};cliente_nome={c.Nome};cliente_email={c.Email};cliente_telefone={c.Telefone};nome_evento={evento.NomeEvento};tipos_evento_nome={te.Nome};tipos_evento_preco={te.Preco};servicos_adicionais_nome={sa.Nome};servicos_adicionais_preco={sa.Preco};data_evento={evento.DataEvento};horario={evento.Horario};pagamento={evento.Pagamento};descricao={evento.Descricao};preco_total={evento.PrecoTotal};";
         }
 
     }

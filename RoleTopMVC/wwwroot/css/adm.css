@@ -1,5 +1,5 @@
 main {
-    width: 80%;
+    width: 100%;
 }
 
 #painel {
@@ -60,6 +60,11 @@ table {
 
 table th {
     background-color:#A10A89;
+}
+
+tbody a {
+    color: #000000;
+    size: 20px;
 }
 
 table a {

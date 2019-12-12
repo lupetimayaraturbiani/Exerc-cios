@@ -64,11 +64,16 @@ namespace RoleTopMVC.Controllers
             {
                 Nome = form["nome"],
                 Email = form["email"],
+                Telefone = form["telefone"]
             };
 
-            string nomeEvento = form["nomeEvento"];
+            string nomeEvento = form["nome_evento"];
 
             var dataEvento = form["data_evento"];
+            
+            var horario = form["horario"];
+
+            string pagamento = form["pagamento"];
 
             var nomeTiposEvento = form["tiposEvento"];
             TiposEvento tiposEvento = new TiposEvento(nomeTiposEvento, tiposEventoRepository.ObterPrecoDe(nomeTiposEvento));
@@ -76,11 +81,17 @@ namespace RoleTopMVC.Controllers
             var nomeServicosAdicionais = form["servicosAdicionais"];
             ServicosAdicionais servicosAdicionais = new ServicosAdicionais(nomeServicosAdicionais, servicosAdicionaisRepository.ObterPrecoDe(nomeServicosAdicionais));
             
-            var horario = form["horario"];
-
-            string pagamento = form["pagamento"];
-
             string descricao = form["descricao"];
+
+            evento.NomeEvento = nomeEvento;
+
+            evento.DataEvento = DateTime.Parse(dataEvento);
+
+            evento.Horario = DateTime.Parse(horario);
+
+            evento.Descricao = descricao;
+
+            evento.Pagamento = pagamento;
 
             evento.PrecoTotal = tiposEvento.Preco + servicosAdicionais.Preco;
 
@@ -143,6 +154,7 @@ namespace RoleTopMVC.Controllers
                     UsuarioNome = ObterUsuarioNomeSession()
                 });
             }
+
         }
     }
 }

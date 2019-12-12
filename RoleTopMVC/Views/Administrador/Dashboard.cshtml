@@ -24,13 +24,12 @@
             <table>
                 <thead>
                     <tr>
-                        <th rowspan="2">Nome</th>
+                        <th rowspan="2">Nome Evento</th>
                         <th rowspan="2">Data Evento</th>
                         <th rowspan="2">Horario</th>
-                        <th colspan="2">Tipo de Evento</th>
-                        <th colspan="2">Serviço Adicional</th>
-                        <th colspan="2" rowspan="3">Aprovar</th>
-                        <th colspan="2" rowspan="4">Reprovar</th>
+                        <th >Tipo de Evento</th>
+                        <th >Serviço Adicional</th>
+                        <th  rowspan="7">Aprovar</th>
                     </tr>
                 </thead>
                 <tfoot>
@@ -44,7 +43,7 @@
                     @foreach(var evento in Model.Eventos )
                     {
                         <tr>
-                            <td>@evento.Cliente.Nome</td>
+                            <td>@evento.NomeEvento</td>
                             <td>@evento.DataEvento</td>
                             <td>@evento.Horario</td>
                             <td>@evento.TiposEvento.Nome</td>
