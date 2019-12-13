@@ -3,7 +3,8 @@
     ViewData["Title"] = "Usuario - RoleTop";
 }
 <main>
-        <h2>Minha Conta</h2>
+    <br/>
+    <h2>Minha Conta</h2>
 
         <img src="/img/icone usuário.png" id="icone-usuario" />
 
@@ -11,7 +12,8 @@
             <p>@Model.NomeCliente</p>
             <p>@Model.Cliente.Email</p>
             <p>@Model.Cliente.Telefone</p>
-                <h2>Cadastre seu evento</h2>
+    <br/>
+        <h2>Cadastre seu Evento</h2>
         <section id="cadastro">
             <form method="POST" action='@Url.Action("Registrar", "Usuario")'>
                 
@@ -57,8 +59,9 @@
                     <input id="pagamento" type="text"  minlength="6" name="pagamento"/>
                 </div>
 
-                <label for="servicosAdicionais">Serviços Adicionais</label>
-                <br />
+                <div>
+                    <label for="servicosAdicionais">Serviços Adicionais</label>
+                    <br />
                 <select id="servicosAdicionais" name="servicosAdicionais" >
                     <option value=""  disabled selected>Selecione</option>
                     @foreach (var servicosAdicionais in Model.ServicosAdicionais)
@@ -69,9 +72,11 @@
                     }
 
                 </select>
-                <br />
-                <label for="tiposEvento">Tipo de Evento</label>
-                <br />
+                </div>
+                
+                <div>
+                    <label for="tiposEvento">Tipo de Evento</label>
+                    <br />
                 <select id="tiposEvento" name="tiposEvento" >
                     <option value=""  disabled selected>Selecione</option>
                     @foreach (var tiposEvento in Model.TiposEvento)
@@ -81,12 +86,14 @@
                         </option>
                     }
                 </select>
-                <br />
-                <label for="descricao"> Descrição do Evento</label>
-                <br />
-                <textarea placeholder="Descrição do evento"name="descricao" id="descricao" ></textarea>
-                    
-                <br />
+                </div>
+
+                <div>
+                    <label for="descricao"> Descrição do Evento</label>
+                    <br />
+                    <textarea placeholder="Descrição do evento" cols="50" rows="5" name="descricao" id="descricao" ></textarea>
+                </div>
+
                 <input type="submit" value="Cadastrar evento" />
             </form>
         </section>
@@ -94,7 +101,7 @@
         <br />
         <br />
 
-        <p>Meus Eventos</p>
+        <h2>Meus Eventos</h2>
     <table>
         <thead>
             <tr>

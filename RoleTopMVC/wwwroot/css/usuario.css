@@ -17,6 +17,8 @@ body {
 
 main {
     height: 100%;
+    align-items: center;
+    padding: 0.5em;
 }
 h2 {
     font-size: 2em;
@@ -89,14 +91,15 @@ nav ul > li > a:hover {
                                         /* LOGO FIM */
 /* ************************************************************************************** */
 
+
+
 #icone-usuario {
     width: 15%;
-    display: flex;
-    justify-content: left;
+    justify-content: center;
 }
 
 .topicos {
-    text-align: left;
+    text-align: center;
     margin: 1;
 }
 
@@ -122,9 +125,7 @@ a {
     text-align: center;
 }
 
-
-
-
+/***********************************************CADASTRO DE EVENTOS******************************************/
 
 
 
@@ -143,14 +144,20 @@ form label {
 }
 
 form input[type="submit"] {
+    background-color: #FFB900;
+    border: 1px solid #FFB900;
+    color:white;
     margin: 20px 0;
     height: 2em;
-    border-radius:3px;
-    font-weight: bold;
     border-radius: 2em;
+    font-size: 0.3;
+    font-weight: bold;
+    text-align: center;
 }
 
-
+div {
+    padding: 0.4em;
+}
 
 
 /********************************PARTE HISTÓRICO***************************************/
@@ -158,14 +165,14 @@ form input[type="submit"] {
 table {
     text-align: center;
     color: #fff;
-    border: 1px dashed #ff9933;
+    border: 1px dashed #FFB900;
     width: 100%;
     padding: 5px;
     word-break: normal;
 }
 
 table th {
-    background-color:#A10A89;
+    background-color:#FFB900;
 }
 
 table a {

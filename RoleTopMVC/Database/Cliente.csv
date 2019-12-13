@@ -1,3 +1,4 @@
-tipo_usuario=0;nome=xiquexique;email=adm@gmail.com;cpf=12312312312;senha=adm123;confirma_senha=123456;endereco=lalalalalal;telefone=11 12341234;data_nascimento=10/12/2019 00:00:00
+tipo_usuario=0;nome=Administrador;email=adm@gmail.com;cpf=12312312312;senha=adm123;confirma_senha=123456;endereco=lalalalalal;telefone=11 12341234;data_nascimento=10/12/2019 00:00:00
 tipo_usuario=1;nome=xiquexique;email=xiqueplanta@gmail.com;cpf=12312312312;senha=123456;confirma_senha=123456;endereco=lalalalalal;telefone=11 12341234;data_nascimento=10/12/2019 00:00:00
 tipo_usuario=1;nome=nao;email=nao@gmail.com;cpf=12312312312;senha=123456;confirma_senha=123456;endereco=nao sei 123;telefone=1112341234;data_nascimento=10/12/2019 00:00:00
+tipo_usuario=1;nome=sim silva;email=simsilva@gmail.com;cpf=12312312312;senha=123456;confirma_senha=123456;endereco=silva rua 123;telefone=1112341234;data_nascimento=13/12/2003 00:00:00

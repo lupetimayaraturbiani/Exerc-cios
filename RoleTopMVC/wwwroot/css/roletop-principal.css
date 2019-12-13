@@ -82,6 +82,10 @@ nav ul > li > a:hover {
                                         /* LOGO FIM */
 /* ************************************************************************************** */
 
+h2 {
+    font-size: 52.5px;
+}
+
 #Banner > img {
     width: 100%;
 }
@@ -89,13 +93,14 @@ nav ul > li > a:hover {
 
 .flex-group-sobre-o-espaço {
     display: flex;
-    justify-content: right;
-    width: 30%;
+    justify-content : left;
+    font-size: 2.5em;
+    padding: 1em;
+    align-items: center;
+    
 }
 
-.flex-group-sobre-o-espaço.grupo-cima {
-    flex-direction: row;
-}
+
 
 #rodape {
     background-color: #FFB900;

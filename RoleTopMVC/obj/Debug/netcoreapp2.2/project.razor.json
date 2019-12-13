@@ -3046,8 +3046,8 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\49393984808\\Documents\\Exercícios\\RoleTopMVC\\Views\\Galeria\\fotos.cshtml",
-      "TargetPath": "Views\\Galeria\\fotos.cshtml",
+      "FilePath": "c:\\Users\\49393984808\\Documents\\Exercícios\\RoleTopMVC\\Views\\Galeria\\Fotos.cshtml",
+      "TargetPath": "Views\\Galeria\\Fotos.cshtml",
       "FileKind": "mvc"
     }
   ],
